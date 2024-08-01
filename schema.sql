@@ -47,22 +47,27 @@ CREATE TABLE users
   PRIMARY KEY (id)
 );
 
--- Posts table
-CREATE TABLE posts (
+-- Questions table
+CREATE TABLE quiz_questions (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    body TEXT,
+    question VARCHAR(255) NOT NULL,
+    correct_answer VARCHAR(255) NOT NULL,
+    answer_2 VARCHAR(255) NOT NULL,
+    answer_3 VARCHAR(255) NOT NULL,
+    answer_4 VARCHAR(255) NOT NULL,
+    category TEXT,
+    difficulty TEXT,
     user_id INT REFERENCES users(id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Comments table
+--  questions Comments table
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
-    body TEXT NOT NULL,
+    comment TEXT NOT NULL,
     user_id INT REFERENCES users(id),
-    post_id INT REFERENCES posts(id),
+    question_id INT REFERENCES quiz_questions(id),
     parent_comment_id INT NULL REFERENCES comments(id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
@@ -72,9 +77,16 @@ CREATE TABLE comments (
 CREATE TABLE votes (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id),
-    post_id INT NULL REFERENCES posts(id),
+    questions_id INT NULL REFERENCES quiz_questions(id),
     vote SMALLINT CHECK (vote IN (-1, 1)),
-    vote_type VARCHAR(255) CHECK (vote_type IN ('post', 'comment')),
+    vote_type VARCHAR(255) CHECK (vote_type IN ('question', 'comment')),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    -- UNIQUE(user_id, post_id, vote_type)
+    UNIQUE(user_id, questions_id, vote_type)
+);
+
+-- track scores table
+CREATE TABLE quiz_scores (
+  id SERIAL PRIMARY KEY, 
+  user_id INT REFERENCES users(id),
+  score INT
 );
