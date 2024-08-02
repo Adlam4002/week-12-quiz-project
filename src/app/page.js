@@ -6,7 +6,6 @@ import Header from "@/components/Header/Header";
 export default function Home() {
   return (
     <main className="text-white">
-      <Header></Header>
       <h1>Hello Guys!</h1>
     </main>
   );
