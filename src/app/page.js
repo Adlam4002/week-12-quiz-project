@@ -6,6 +6,7 @@ import Header from "@/components/Header/Header";
 
 export default function Home() {
   return (
+    <>
       <Header></Header>
       <main className="text-center text-lg font-bold text-white flex flex-col items-center">
         {" "}
@@ -19,5 +20,6 @@ export default function Home() {
       <Logout /> */}
         </div>
       </main>
+    </>
   );
 }
