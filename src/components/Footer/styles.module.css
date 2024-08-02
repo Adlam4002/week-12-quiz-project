@@ -1,53 +1,61 @@
 .footer {
-    @apply w-full;
-    @apply bg-neutral-800 text-slate-200;
-    @apply flex flex-row justify-center;
-    @apply p-2;
-    @apply static bottom-0;
+  @apply w-full;
+  @apply bg-neutral-800 text-slate-200;
+  @apply flex flex-row justify-center;
+  @apply p-2;
+  @apply static bottom-0;
 }
 
 .ul {
-    @apply flex flex-row gap-8;
+  @apply flex flex-row gap-8;
+  list-style: none;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
 }
 
-/* styles.module.css */
+.links {
+  display: flex;
+  flex-direction: row;
+}
 
-.footer {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .accordion {
-    margin-top: 20px;
-  }
-  
-  .accordionItem {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-  
-  .accordionHeader {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    
-  }
-  
-  .accordionTrigger {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .accordionContent {
-    padding: 10px;
-    
-  }
-  
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.accordion {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.accordionItem {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.accordionTrigger {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.accordionContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-wrap: wrap; /* Ensure content wraps if necessary */
+}
