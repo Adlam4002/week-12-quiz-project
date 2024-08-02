@@ -1,9 +1,10 @@
 import { auth } from "@/auth";
+import { SignInButton } from "@/components/SignIn";
 import { db } from "@/db";
 
 export default async function UserProfilePage() {
   const session = await auth();
-  const userId = session.user.id;
+  const userId = session?.user?.id;
   const response = await db.query(
     `
     select * from users where id = $1`,
@@ -19,6 +20,15 @@ export default async function UserProfilePage() {
   );
   const questionsData = qdata.rows;
   console.log(questionsData);
+  if (!session) {
+    return (
+      <div className="flex items-center flex-col">
+        Please log in to view your profile!
+        <br />
+        <SignInButton />
+      </div>
+    );
+  }
   return (
     <main>
       <div className="flex justify-center">
