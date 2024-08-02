@@ -51,7 +51,7 @@ export default async function QuestionForm() {
     );
   }
   return (
-    <main>
+    <>
       <form
         action={handleQuestion}
         className="flex flex-col p-16 space-y-2 text-black items-center"
@@ -143,6 +143,6 @@ export default async function QuestionForm() {
         </select>
         <button>Submit!</button>
       </form>
-    </main>
+    </>
   );
 }
