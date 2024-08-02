@@ -37,6 +37,11 @@ export default async function Header() {
             </button>
           </li>
           <li>
+            <button className={`${styles.button}`}>
+              <Link href={`/userprofile/${session.user.id}`}>My Profile</Link>
+            </button>
+          </li>
+          <li>
             <Logout />
           </li>
         </ul>

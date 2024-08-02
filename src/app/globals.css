@@ -33,3 +33,31 @@ button:hover {
   border: solid rgb(158, 164, 250);
   transition: 0.2ms;
 }
+#question-display {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 1fr;
+  border: solid darkgrey;
+  border-radius: 5%;
+  width: 60vw;
+  background-color: rgb(38 38 38);
+  margin: 15px;
+}
+#thequestion {
+  grid-area: 1/1/2/2;
+  text-align: center;
+  margin: auto;
+}
+#answers-boxes {
+  display: flex;
+  flex-direction: column;
+  grid-area: 1/2/2/3;
+  align-items: center;
+}
+#profile-correct-answer {
+  transition-duration: 0.5s;
+}
+#profile-correct-answer:hover {
+  background-color: rgba(116, 255, 116, 0.62);
+  transition-duration: 0.5s;
+}
