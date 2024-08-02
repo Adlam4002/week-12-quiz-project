@@ -52,29 +52,47 @@ export default async function QuestionForm() {
   }
   return (
     <main>
-      <h1>Please enter your question below </h1>
-      <form action={handleQuestion} className="flex flex-col p-16 space-y-2">
-        <label htmlFor="question">Please enter your question:</label>
+      <form
+        action={handleQuestion}
+        className="flex flex-col p-16 space-y-2 text-black items-center"
+      >
+        {" "}
+        <h1 className="text-white text-xl">
+          Please enter your question below{" "}
+        </h1>
+        <label className="text-white" htmlFor="question">
+          Please enter your question:
+        </label>
         <textarea
           name="question"
           className="text-black px-3 py-2 rounded"
           placeholder="How many legs does a dog have?"
           required
         />
-        <label htmlFor="correct_answer">Enter the correct answer:</label>
+        <label className="text-white" htmlFor="correct_answer">
+          Enter the correct answer:
+        </label>
         <input
           type="text"
           name="correct_answer"
           required
           placeholder="4"
         ></input>
-        <label htmlFor="answer_2">Enter an inccorect answer:</label>
+        <label className="text-white" htmlFor="answer_2">
+          Enter an inccorect answer:
+        </label>
         <input type="text" name="answer_2" required placeholder="2"></input>
-        <label htmlFor="answer_3">Enter another inccorect answer:</label>
+        <label className="text-white" htmlFor="answer_3">
+          Enter another inccorect answer:
+        </label>
         <input type="text" name="answer_3" required placeholder="6"></input>
-        <label htmlFor="answer_4">Enter another inccorect answer:</label>
+        <label className="text-white" htmlFor="answer_4">
+          Enter another inccorect answer:
+        </label>
         <input type="text" name="answer_4" required placeholder="3"></input>
-        <label htmlFor="category">Pick a category</label>
+        <label className="text-white" htmlFor="category">
+          Pick a category
+        </label>
         <select name="category" required>
           <option value="">Pick one...</option>
           <option value="General Knowledge">General Knowledge</option>
@@ -114,7 +132,9 @@ export default async function QuestionForm() {
           <option value="Animals">Animals</option>
           <option value="Vehicles">Vehicles</option>
         </select>
-        <label htmlFor="difficulty">Difficulty</label>
+        <label className="text-white" htmlFor="difficulty">
+          Difficulty
+        </label>
         <select name="difficulty" required>
           <option value="">Pick a difficulty...</option>
           <option value="Easy">Easy</option>
