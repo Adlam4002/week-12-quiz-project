@@ -2,9 +2,11 @@ import { Logout } from "@/components/Logout";
 import QuizzComponent from "@/components/QuizzComponent";
 import { SignInButton } from "@/components/SignIn";
 import Image from "next/image";
+import Header from "@/components/Header/Header";
 
 export default function Home() {
   return (
+    <Header></Header>
     <main className="text-center text-lg font-bold text-white flex flex-col items-center">
       {" "}
       {/* border-solid border-2 */}
