@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/Providers";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const exo2 = Exo_2({ subsets: ["latin"], weights: [500, 800] });
 
 export const metadata = {
   title: "QuizzyPop",
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={exo2.className}>
         <Header></Header>
         <Providers>{children}</Providers>
         <Footer></Footer>

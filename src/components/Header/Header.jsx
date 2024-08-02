@@ -11,9 +11,7 @@ export default async function Header() {
   const session = await auth();
 
   if (!session) {
-    return (
-      <SignInButton />
-    );
+    return <SignInButton />;
   }
 
   return (
@@ -35,15 +33,14 @@ export default async function Header() {
           </li>
           <li>
             <button className={`${styles.button}`}>
-              <Link href="/submitq">Submit a Question</Link>
+              <Link href="/newquestion">Submit a Question</Link>
             </button>
           </li>
-            <li>
-              <Logout />
-            </li>
+          <li>
+            <Logout />
+          </li>
         </ul>
       </nav>
     </header>
   );
-};
-
+}
