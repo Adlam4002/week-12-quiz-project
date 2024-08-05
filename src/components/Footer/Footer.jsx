@@ -26,6 +26,7 @@ const Footer = () => {
             <Accordion.Content className={`${styles.accordionContent}`}>
               <nav>
                 <ul className={`${styles.ul}`}>
+                <h2>Our Project:</h2>
                   <a className={`${styles.links}`} href="https://github.com/Adlam4002/week-12-quiz-project">
                     <Image
                       src="/Assets/github-mark-white.png"
@@ -34,16 +35,29 @@ const Footer = () => {
                       height={50}
                     />
                   </a>
-
-                  <h2>LinkedIn:</h2>
-                  <a href="https://www.linkedin.com/in/alex-adlam-3456b3a5/">
-                    Alex
+                  <a className={`${styles.links}`} href="https://www.linkedin.com/in/alex-adlam-3456b3a5/">
+                    <Image
+                      src="/Assets/LI-Alex.png"
+                      alt="GitHub Logo"
+                      width={50}
+                      height={50}
+                    />
                   </a>
-                  <a href="https://www.linkedin.com/in/daniel-szabo-455134248/">
-                    Daniel
+                  <a className={`${styles.links}`} href="https://www.linkedin.com/in/daniel-szabo-455134248/">
+                    <Image
+                      src="/Assets/LI-Daniel.png"
+                      alt="GitHub Logo"
+                      width={50}
+                      height={50}
+                    />
                   </a>
-                  <a href="https://www.linkedin.com/in/joshua-day-ba1652311/">
-                    Josh
+                  <a className={`${styles.links}`} href="https://www.linkedin.com/in/joshua-day-ba1652311/">
+                    <Image
+                      src="/Assets/LI-Josh.png"
+                      alt="GitHub Logo"
+                      width={50}
+                      height={50}
+                    />
                   </a>
                 </ul>
               </nav>

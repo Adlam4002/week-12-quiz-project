@@ -11,7 +11,15 @@ export default async function Header() {
   const session = await auth();
 
   if (!session) {
-    return <SignInButton />;
+    return (
+    <header className={`${styles.header}`}>
+      <div>
+        <h1 className="title">QuizziePop! </h1>
+      </div>
+      <SignInButton /> 
+    </header>
+    );
+    
   }
 
   return (
