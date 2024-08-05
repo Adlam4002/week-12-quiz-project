@@ -15,24 +15,36 @@ export default function Shuffler({ answers }) {
   return (
     <>
       {answers[0] == check[0] ? (
-        <div id="profile-correct-answer">{answers[0]}</div>
+        <div
+          id="profile-correct-answer"
+          dangerouslySetInnerHTML={{ __html: answers[0] }}
+        ></div>
       ) : (
-        <div>{answers[0]}</div>
+        <div dangerouslySetInnerHTML={{ __html: answers[0] }}></div>
       )}
       {answers[1] == check[0] ? (
-        <div id="profile-correct-answer">{answers[1]}</div>
+        <div
+          id="profile-correct-answer"
+          dangerouslySetInnerHTML={{ __html: answers[1] }}
+        ></div>
       ) : (
-        <div>{answers[1]}</div>
+        <div dangerouslySetInnerHTML={{ __html: answers[1] }}></div>
       )}
       {answers[2] == check[0] ? (
-        <div id="profile-correct-answer">{answers[2]}</div>
+        <div
+          id="profile-correct-answer"
+          dangerouslySetInnerHTML={{ __html: answers[2] }}
+        ></div>
       ) : (
-        <div>{answers[2]}</div>
+        <div dangerouslySetInnerHTML={{ __html: answers[2] }}></div>
       )}
       {answers[3] == check[0] ? (
-        <div id="profile-correct-answer">{answers[3]}</div>
+        <div
+          id="profile-correct-answer"
+          dangerouslySetInnerHTML={{ __html: answers[3] }}
+        ></div>
       ) : (
-        <div>{answers[3]}</div>
+        <div dangerouslySetInnerHTML={{ __html: answers[3] }}></div>
       )}
     </>
   );

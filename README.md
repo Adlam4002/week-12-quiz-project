@@ -12,4 +12,6 @@ In the afternoon we did some brainstorming about exactly how and which props we 
 
 ## Day 3
 
+In the morning, we discussed how we would go about retrieving the questions and we decided to pull 500 questions from the API and insert them into our database for ease of access. We produced a Python script to fetch the questions and then insert them into our database on Supabase. We worked as a whole team to refine the Python script. We were using a session token to ensure we did not get duplicate questions inserted into the database. We were fetching the questions in batches of 50 questions every 6 seconds. We formatted it like this as there is a limit on the number of requests (no more than one per five seconds). It was an interesting experience using Python as one team member was familiar with the language. One has a basic understanding, and one has no experience at all. So, it was a good learning activity for the group. Daniel was incredibly helpful in explaining to us what we needed to do. After we set this up, we used it to populate our questions database with 3500 questions from a trivia API. This task essentially took the whole morning but we believe it was a worthwhile pursuit.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
