@@ -15,16 +15,29 @@ export default function QuizzComponent({ params }) {
     correctAnswers: 0,
     wrongAnswers: 0,
   });
+  const [question, setQuestion] = useState("");
 
   const data = params;
-  const { question, correct_answer, incorrect_answers } = data[activeQuestion];
+  const [answer_2, setAnswer_2] = useState("");
+  const [answer_3, setAnswer_3] = useState("");
+  const [answer_4, setAnswer_4] = useState("");
+  const [correct_answer, setCorrectAnswer] = useState("");
+
+  // useEffect to set the question, answers, and correct answer when the active question changes and sets the server and client to the same state
+  useEffect(() => {
+    setQuestion(data[activeQuestion].question);
+    setAnswer_2(data[activeQuestion].answer_2);
+    setAnswer_3(data[activeQuestion].answer_3);
+    setAnswer_4(data[activeQuestion].answer_4);
+    setCorrectAnswer(data[activeQuestion].correct_answer);
+  }, [activeQuestion, data]);
 
   // useMemo is used to prevent the answers from being randomized every time the component re-renders
   const answers = useMemo(() => {
-    return [correct_answer, ...incorrect_answers].sort(
+    return [correct_answer, answer_2, answer_3, answer_4].sort(
       () => Math.random() - 0.5
     );
-  }, [correct_answer, incorrect_answers]); // Randomize the answers to prevent the correct answer from always being in the same position
+  }, [correct_answer, answer_2, answer_3, answer_4]); // Randomize the answers to prevent the correct answer from always being in the same position
 
   const onAnswerSelect = (answer, index) => {
     setSelectedAnswerIndex(index);
