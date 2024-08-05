@@ -38,7 +38,7 @@ export default async function QuestionForm() {
       ]
     );
     // these are placeholder locations and when a profile page and questionlist exists they will need to be updated
-    revalidatePath("/");
+    revalidatePath("/questionslist");
     redirect("/");
   }
   if (!session) {
@@ -137,9 +137,9 @@ export default async function QuestionForm() {
         </label>
         <select name="difficulty" required>
           <option value="">Pick a difficulty...</option>
-          <option value="Easy">Easy</option>
-          <option value="Medium">Medium</option>
-          <option value="Hard">Hard</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
         </select>
         <button>Submit!</button>
       </form>

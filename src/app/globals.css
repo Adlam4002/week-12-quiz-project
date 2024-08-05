@@ -61,3 +61,11 @@ button:hover {
   background-color: rgba(116, 255, 116, 0.62);
   transition-duration: 0.5s;
 }
+#question-list {
+  color: rgb(38 38 38);
+  font-weight: 550;
+}
+#question-list-page {
+  max-height: 85vh;
+  overflow-y: auto;
+}
