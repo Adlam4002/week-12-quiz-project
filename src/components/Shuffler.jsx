@@ -10,8 +10,8 @@ export default function Shuffler({ answers }) {
     }
   }
   shuffleArray(answers);
-  console.log(`OG: ${check}`);
-  console.log(`Shuf: ${answers}`);
+  //   console.log(`OG: ${check}`);
+  //   console.log(`Shuf: ${answers}`);
   return (
     <>
       {answers[0] == check[0] ? (

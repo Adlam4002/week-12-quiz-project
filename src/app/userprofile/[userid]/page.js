@@ -47,7 +47,7 @@ export default async function UserProfilePage() {
             item.answer_3,
             item.answer_4,
           ];
-          console.log(answers);
+          // console.log(answers);
           return (
             <>
               <div id="question-display" key={item.id}>
