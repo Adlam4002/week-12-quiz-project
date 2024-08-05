@@ -38,7 +38,7 @@ button:hover {
   grid-template-columns: 60% 40%;
   grid-template-rows: 1fr;
   border: solid darkgrey;
-  border-radius: 5%;
+  border-radius: 1.5%;
   width: 60vw;
   background-color: rgb(38 38 38);
   margin: 15px;

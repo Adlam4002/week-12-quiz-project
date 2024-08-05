@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import Shuffler from "@/components/Shuffler";
 import { SignInButton } from "@/components/SignIn";
 import { db } from "@/db";
 
@@ -39,17 +40,29 @@ export default async function UserProfilePage() {
       </div>
       <div className="flex flex-col items-center">
         <h1>Your questions:</h1>
-        {questionsData.map((item) => (
-          <div id="question-display" key={item.id}>
-            <div id="thequestion">{item.question}</div>
-            <div id="answers-boxes">
-              <div id="profile-correct-answer">{item.correct_answer}</div>
-              <div>{item.answer_2}</div>
-              <div>{item.answer_3}</div>
-              <div>{item.answer_4}</div>
-            </div>
-          </div>
-        ))}
+        {questionsData.map((item) => {
+          const answers = [
+            item.correct_answer,
+            item.answer_2,
+            item.answer_3,
+            item.answer_4,
+          ];
+          console.log(answers);
+          return (
+            <>
+              <div id="question-display" key={item.id}>
+                <div id="thequestion">{item.question}</div>
+                <div id="answers-boxes">
+                  <Shuffler answers={answers} />
+                  {/* <div id="profile-correct-answer">{item.correct_answer}</div>
+                  <div>{item.answer_2}</div>
+                  <div>{item.answer_3}</div>
+                  <div>{item.answer_4}</div> */}
+                </div>
+              </div>
+            </>
+          );
+        })}
       </div>
     </main>
   );
