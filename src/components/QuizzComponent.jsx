@@ -1,6 +1,5 @@
 "use client";
 
-import { redirect } from "next/navigation";
 import React, { useEffect, useState, useMemo } from "react";
 
 export default function QuizzComponent({ params }) {
@@ -159,7 +158,7 @@ export default function QuizzComponent({ params }) {
             <p className="text-center text-lg font-semibold text-gray-700">
               Percentage: {((result.score / data.length) * 100).toFixed(2)}%
             </p>
-            <button onClick={() => window.location.reload()}>Restart</button>
+            <button onClick={() => window.location.reload()}>Try Again</button>
           </div>
         </div>
       )}
