@@ -46,6 +46,11 @@ export default async function Header() {
           </li>
           <li>
             <button className={`${styles.button}`}>
+              <Link href="/questionslist">View Questions</Link>
+            </button>
+          </li>
+          <li>
+            <button className={`${styles.button}`}>
               <Link href={`/userprofile/${session.user.id}`}>My Profile</Link>
             </button>
           </li>
