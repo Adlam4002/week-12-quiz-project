@@ -5,13 +5,31 @@ import Image from "next/image";
 import { fetchData } from "@/utils/fetchData";
 // import { useState, useEffect } from "react";
 import { db } from "@/db";
+import { auth } from "@/auth";
+import QuizFormComponent from "@/components/QuizFormComponent";
 
 export default async function Home() {
+  const session = await auth();
+  // If the user is not logged in, display the initial 3 quiz questions
+  if (!session) {
+    const response = await db.query(
+      `select question, correct_answer, answer_2, answer_3, answer_4  from quiz_questions where category = 'Entertainment: Japanese Anime &amp; Manga' and difficulty = 'easy' ORDER BY RANDOM() FETCH FIRST 3 ROWS ONLY`
+    );
+    const data = response.rows;
+    return (
+      <>
+        <main className="text-center text-lg font-bold text-white flex flex-col items-center">
+          <div className="flex flex-col items-center">
+            <h1>Welcome to QuizzyPop!</h1>
+            <QuizzComponent params={data} />
+          </div>
+        </main>
+      </>
+    );
+  }
+
   // const data = await fetchData();
-  const response = await db.query(
-    `select question, correct_answer, answer_2, answer_3, answer_4  from quiz_questions where category = 'Entertainment: Japanese Anime &amp; Manga' and difficulty = 'easy' ORDER BY RANDOM() FETCH FIRST 3 ROWS ONLY`
-  );
-  const data = response.rows;
+
   // console.log(data);
 
   // Fetch data from the API using useState and useEffect hooks to handle the loading state of the data
@@ -42,15 +60,9 @@ export default async function Home() {
   return (
     <>
       <main className="text-center text-lg font-bold text-white flex flex-col items-center">
-        {" "}
-        {/* border-solid border-2 */}
         <div className="flex flex-col items-center">
           <h1>Welcome to QuizzyPop!</h1>
-          <QuizzComponent params={data} />
-          {/* Quizz component here */}
-          {/* <h1>Hello Guys!</h1>
-      <SignInButton />
-      <Logout /> */}
+          <QuizFormComponent />
         </div>
       </main>
     </>
