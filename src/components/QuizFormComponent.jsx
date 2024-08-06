@@ -84,7 +84,7 @@ export default function QuizFormComponent() {
         min="1"
         max="20"
       ></input>
-      <button>Lets start poping!</button>
+      <button>Let&apos;s start popping!</button>
     </form>
   );
 }
