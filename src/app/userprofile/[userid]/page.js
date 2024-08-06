@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import Grid from "@/components/Grid";
+import UserGrid from "@/components/UserGrid";
 import Shuffler from "@/components/Shuffler";
 import { SignInButton } from "@/components/SignIn";
 import { db } from "@/db";
@@ -37,34 +37,11 @@ export default async function UserProfilePage() {
         <div id="user-info">
           <h1>Welcome: {userInformation.name}</h1>
           <h1>Your average score is : ###</h1>
-          <Grid />
         </div>
       </div>
       <div className="flex flex-col items-center">
         <h1>Your questions:</h1>
-        {questionsData.map((item) => {
-          const answers = [
-            item.correct_answer,
-            item.answer_2,
-            item.answer_3,
-            item.answer_4,
-          ];
-          // console.log(answers);
-          return (
-            <>
-              <div id="question-display" key={item.id}>
-                <div id="thequestion">{item.question}</div>
-                <div id="answers-boxes">
-                  <Shuffler answers={answers} />
-                  {/* <div id="profile-correct-answer">{item.correct_answer}</div>
-                  <div>{item.answer_2}</div>
-                  <div>{item.answer_3}</div>
-                  <div>{item.answer_4}</div> */}
-                </div>
-              </div>
-            </>
-          );
-        })}
+        <UserGrid data={questionsData} />
       </div>
     </main>
   );

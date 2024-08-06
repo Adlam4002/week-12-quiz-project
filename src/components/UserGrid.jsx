@@ -4,20 +4,19 @@ import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the 
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the Data Grid
 import React, { useEffect, useState } from "react";
 
-export default function Grid({ data }) {
+export default function UserGrid({ data }) {
   // Row Data: The data to be displayed.
   const [rowData, setRowData] = useState([]);
 
   // Column Definitions: Defines & controls grid columns.
   const [colDefs, setColDefs] = useState([
-    { field: "category", filter: true, width: 300 },
+    { field: "category", filter: true, width: 10 },
     { field: "difficulty", filter: true },
-    { field: "question", width: 750, filter: true },
+    { field: "question", width: 750 },
     { field: "correct_answer", headerName: "Correct Answer" },
     { field: "answer_2", headerName: "Incorrect Answer" },
     { field: "answer_3", headerName: "Incorrect Answer" },
     { field: "answer_4", headerName: "Incorrect Answer" },
-    { field: "username", filter: true },
   ]);
 
   const defaultColDef = {
@@ -25,7 +24,7 @@ export default function Grid({ data }) {
   };
 
   const autoSizeStrategy = {
-    type: "fitCellContents",
+    type: "fitGridWidth",
   };
   useEffect(() => {
     if (data) {
@@ -37,8 +36,8 @@ export default function Grid({ data }) {
     <div
       className={"ag-theme-quartz-dark"}
       style={{
-        width: "83vw",
-        height: "83vh",
+        width: "70vw",
+        height: "70vh",
         marginTop: "20px",
         marginBottom: "20px",
       }}
@@ -48,6 +47,7 @@ export default function Grid({ data }) {
         columnDefs={colDefs}
         defaultColDef={defaultColDef}
         pagination={true}
+        autoSizeStrategy={autoSizeStrategy}
       />
     </div>
   );

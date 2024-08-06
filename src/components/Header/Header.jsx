@@ -12,14 +12,13 @@ export default async function Header() {
 
   if (!session) {
     return (
-    <header className={`${styles.header}`}>
-      <div>
-        <h1 className="title">QuizziePop! </h1>
-      </div>
-      <SignInButton /> 
-    </header>
+      <header className={`${styles.header}`}>
+        <div>
+          <h1 className="title">QuizziePop! </h1>
+        </div>
+        <SignInButton />
+      </header>
     );
-    
   }
 
   return (
@@ -42,6 +41,11 @@ export default async function Header() {
           <li>
             <button className={`${styles.button}`}>
               <Link href="/newquestion">Submit a Question</Link>
+            </button>
+          </li>
+          <li>
+            <button className={`${styles.button}`}>
+              <Link href="/questionslist">List of Questions</Link>
             </button>
           </li>
           <li>
