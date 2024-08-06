@@ -6,12 +6,13 @@ import { revalidatePath } from "next/cache";
 export default function QuizFormComponent() {
   async function handleQuestion(formData) {
     "use server";
-    const category = formData.get("category");
+    let category = formData.get("category");
     console.log(category);
     const difficulty = formData.get("difficulty");
     console.log(difficulty);
     const numberOfQuestions = formData.get("numberOfQuestions");
     console.log(numberOfQuestions);
+    category = encodeURI(category);
     console.log(`/quiz/${category}/${difficulty}/${numberOfQuestions}`);
 
     revalidatePath(`/quiz/${category}/${difficulty}/${numberOfQuestions}`);
