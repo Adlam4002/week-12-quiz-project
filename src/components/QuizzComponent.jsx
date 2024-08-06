@@ -9,6 +9,7 @@ export default function QuizzComponent({ params }) {
   const [checked, setChecked] = useState(false);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
   const [showResults, setShowResults] = useState(false);
+  const [showCurrentAnswer, setShowCurrentAnswer] = useState(false);
   const [result, setResult] = useState({
     score: 0,
     correctAnswers: 0,
@@ -43,16 +44,16 @@ export default function QuizzComponent({ params }) {
     setChecked(true);
     if (answer === correct_answer) {
       setSelectedAnswer(true);
-      console.log("Correct Answer");
+      // console.log("Correct Answer");
     } else {
       setSelectedAnswer(false);
-      console.log("Incorrect Answer");
+      // console.log("Incorrect Answer");
     }
   };
 
   // Calculate score and increment to next question
   const nextQuestion = () => {
-    setSelectedAnswerIndex(null);
+    setShowCurrentAnswer(true);
     if (selectedAnswer) {
       setResult({
         ...result,
@@ -66,14 +67,19 @@ export default function QuizzComponent({ params }) {
       });
     }
 
-    if (activeQuestion + 1 < data.length) {
-      setActiveQuestion(activeQuestion + 1);
-    } else {
-      setActiveQuestion(0);
-      setShowResults(true);
-    }
-    setSelectedAnswer("");
-    setChecked(false);
+    // Wait 2 seconds before moving to the next question
+    setTimeout(() => {
+      if (activeQuestion + 1 < data.length) {
+        setActiveQuestion(activeQuestion + 1);
+      } else {
+        setActiveQuestion(0);
+        setShowResults(true);
+      }
+      setSelectedAnswerIndex(null);
+      setSelectedAnswer("");
+      setChecked(false);
+      setShowCurrentAnswer(false);
+    }, 2000);
   };
 
   return (
@@ -93,28 +99,37 @@ export default function QuizzComponent({ params }) {
           </div>
           <div className="space-y-4">
             <div className="flex justify-between flex-wrap">
-              {!showResults ? (
-                answers.map((answer, index) => (
-                  <div
-                    key={index}
-                    onClick={() => onAnswerSelect(answer, index)}
-                    className={
-                      selectedAnswerIndex === index
-                        ? "flex-1 cursor-pointer py-2 px-6 m-1 bg-blue-900 text-white rounded-lg hover:bg-blue-600 "
-                        : "flex-1 cursor-pointer py-2 px-6 m-1 bg-blue-500 text-white rounded-lg hover:bg-blue-900"
-                    }
-                  >
-                    <div dangerouslySetInnerHTML={{ __html: answer }} />
-                  </div>
-                ))
-              ) : (
-                // This is where the correct answer can be displayed after the user has selected an answer and clicked the next button, just need to add a conditional statement to check if the answer is correct or not and display the correct answer if the user selects the wrong answer etc.
-                <div className="flex-1 py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                  <div
-                    dangerouslySetInnerHTML={{ __html: incorrect_answers[0] }}
-                  />
-                </div>
-              )}
+              {!showCurrentAnswer
+                ? answers.map((answer, index) => (
+                    <div
+                      key={index}
+                      onClick={() => onAnswerSelect(answer, index)}
+                      className={
+                        selectedAnswerIndex === index
+                          ? "flex-1 cursor-pointer py-2 px-6 m-1 bg-blue-900 text-white rounded-lg hover:bg-blue-600 "
+                          : "flex-1 cursor-pointer py-2 px-6 m-1 bg-blue-500 text-white rounded-lg hover:bg-blue-900"
+                      }
+                    >
+                      <div dangerouslySetInnerHTML={{ __html: answer }} />
+                    </div>
+                  ))
+                : // If the answer is correct, display the correct answer in green, otherwise display the selected answer in red and the correct answer in green
+                  answers.map((answer, index) => (
+                    <div
+                      key={index}
+                      className={
+                        selectedAnswerIndex === index
+                          ? answer === correct_answer
+                            ? "flex-1 cursor-pointer py-2 px-6 m-1 bg-green-600  text-white rounded-lg "
+                            : "flex-1 cursor-pointer py-2 px-6 m-1 bg-red-600 text-white rounded-lg "
+                          : answer === correct_answer
+                          ? "flex-1 cursor-pointer py-2 px-6 m-1 bg-green-600  text-white rounded-lg "
+                          : "flex-1 cursor-pointer py-2 px-6 m-1 bg-blue-500 text-white rounded-lg hover:bg-blue-900"
+                      }
+                    >
+                      <div dangerouslySetInnerHTML={{ __html: answer }} />
+                    </div>
+                  ))}
             </div>
           </div>
           <div>
