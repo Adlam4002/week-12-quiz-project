@@ -1,4 +1,12 @@
+# Week 12 Project: Quiz app
+
+A group project by Alex Adlam, Josh Day and Daniel Szabo. For this project we decided to make a quiz app.
+
 # Reflections
+
+## A link to our GitHub Repo: https://github.com/Adlam4002/week-12-quiz-project
+
+## A link to our deployed app on Vercel: https://week-12-quiz-project.vercel.app
 
 ## Day 1
 
