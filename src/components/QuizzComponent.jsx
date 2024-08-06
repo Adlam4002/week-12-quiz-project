@@ -18,6 +18,7 @@ export default function QuizzComponent({ params }) {
   const [question, setQuestion] = useState("");
 
   const data = params;
+  // console.log("data in quizzComp:" + data);
   const [answer_2, setAnswer_2] = useState("");
   const [answer_3, setAnswer_3] = useState("");
   const [answer_4, setAnswer_4] = useState("");
