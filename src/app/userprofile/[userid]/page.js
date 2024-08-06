@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import Grid from "@/components/Grid";
 import Shuffler from "@/components/Shuffler";
 import { SignInButton } from "@/components/SignIn";
 import { db } from "@/db";
@@ -36,6 +37,7 @@ export default async function UserProfilePage() {
         <div id="user-info">
           <h1>Welcome: {userInformation.name}</h1>
           <h1>Your average score is : ###</h1>
+          <Grid />
         </div>
       </div>
       <div className="flex flex-col items-center">
