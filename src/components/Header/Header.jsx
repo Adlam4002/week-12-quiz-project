@@ -45,7 +45,9 @@ export default async function Header() {
           </li>
           <li>
             <button className={`${styles.button}`}>
-              <Link href="/questionslist">List of Questions</Link>
+
+              <Link href="/questionslist">View Questions</Link>
+
             </button>
           </li>
           <li>

@@ -59,12 +59,14 @@ export default async function Home() {
 
   return (
     <>
+    <div className="h-4/5 w-full">
       <main className="text-center text-lg font-bold text-white flex flex-col items-center">
         <div className="flex flex-col items-center">
           <h1>Welcome to QuizzyPop!</h1>
           <QuizFormComponent />
         </div>
       </main>
+      </div>
     </>
   );
 }
