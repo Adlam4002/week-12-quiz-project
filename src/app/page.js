@@ -41,6 +41,7 @@ export default async function Home() {
 
   return (
     <>
+    <div className="h-4/5 w-full">
       <main className="text-center text-lg font-bold text-white flex flex-col items-center">
         {" "}
         {/* border-solid border-2 */}
@@ -53,6 +54,7 @@ export default async function Home() {
       <Logout /> */}
         </div>
       </main>
+      </div>
     </>
   );
 }
