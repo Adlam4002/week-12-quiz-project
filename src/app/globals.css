@@ -8,6 +8,13 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.ag-paging-panel {
+  min-height: 70px;
+  overflow: hidden;
+}
+
+
+
 body {
   min-height: 100vh;
   background-color: rgb(209, 128, 21);
@@ -42,17 +49,30 @@ button:hover {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-rows: 1fr;
-  border: solid darkgrey;
+
   border-radius: 1.5%;
-  width: 60vw;
+  width: 90vw;
   background-color: rgb(38 38 38);
-  margin: 15px;
+  margin: 5px;
+}
+@media (min-width: 1024px) {
+  #question-display {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr;
+
+    border-radius: 1.5%;
+    width: 60vw;
+    background-color: rgb(38 38 38);
+    margin: 15px;
+  }
 }
 
 #thequestion {
   grid-area: 1/1/2/2;
   text-align: center;
   margin: auto;
+  padding: 3px;
 }
 
 #answers-boxes {
@@ -60,6 +80,7 @@ button:hover {
   flex-direction: column;
   grid-area: 1/2/2/3;
   align-items: center;
+  padding: 2px;
 }
 
 #profile-correct-answer {

@@ -1,41 +1,43 @@
 import { db } from "@/db";
 import CommentsForm from "../CommentsForm";
-export default async function CommentSection({questionId}){
-    const questionID = questionId
-  
-const response = await db.query(`
+export default async function CommentSection({ questionId }) {
+  const questionID = questionId;
+
+  const response = await db.query(
+    `
     SELECT comments.id, comment, COALESCE(users.name, 'Missing') AS username, question_id, parent_comment_id, created_at, updated_at
     FROM comments
     LEFT JOIN users ON comments.user_id = users.id 
     WHERE question_id = $1
-    `, [questionID])
-   const data = response.rows
-    return(<div className="flex flex-col items-center w-3/5">
-        <CommentsForm qid={questionId}/>
-        {data.map((item)=> 
-        (
-        <div key={item.id} id="comments-box" className="flex flex-col items-center border-2 rounded w-3/5 m-2">
-        <div id="comments-username">{item.username}</div>
-        <div id="comments-comment">{item.comment}</div>
-       </div>
-        
-
-    
-  ))}
-
-        </div>)
+    `,
+    [questionID]
+  );
+  const data = response.rows;
+  return (
+    <div className="flex flex-col items-center w-9/10 md:w-3/5">
+      <CommentsForm qid={questionId} />
+      {data.map((item) => (
+        <div
+          key={item.id}
+          id="comments-box"
+          className="flex flex-col items-center bg rounded w-9/10 md:w-3/5 m-2 shadow-md bg-neutral-700"
+        >
+          <div id="comments-username" className="self-start ml-2 italic">
+            {item.username}
+          </div>
+          <div id="comments-comment" className="pl-2 pr-2 text-center">
+            {item.comment}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
-
-
-
-
-
 
 // 'use client';
 
 // import { useState, useEffect } from 'react';
 // import styles from "./styles.module.css";
-
 
 // const CommentsSection = ({ questionId }) => {
 //   const [comments, setComments] = useState([]);
@@ -58,8 +60,8 @@ const response = await db.query(`
 //         headers: {
 //           'Content-Type': 'application/json',
 //         },
-//         body: JSON.stringify({ 
-//           text: newComment, 
+//         body: JSON.stringify({
+//           text: newComment,
 //           user_id: 1, // Replace with actual user ID retrieval logic
 //           parent_comment_id: null // assuming root comments for now
 //         }),
@@ -92,7 +94,7 @@ const response = await db.query(`
 //         Submit
 //       </button>
 //       {/* <div>
-//        insert displayed comments here 
+//        insert displayed comments here
 //       </div> */}
 //     </div>
 //   );

@@ -10,9 +10,9 @@ export default function UserGrid({ data }) {
 
   // Column Definitions: Defines & controls grid columns.
   const [colDefs, setColDefs] = useState([
-    { field: "category", filter: true, width: 10 },
+    { field: "category", filter: true, width: 200 },
     { field: "difficulty", filter: true },
-    { field: "question", width: 750 },
+    { field: "question", width: 500 },
     { field: "correct_answer", headerName: "Correct Answer" },
     { field: "answer_2", headerName: "Incorrect Answer" },
     { field: "answer_3", headerName: "Incorrect Answer" },
@@ -25,7 +25,7 @@ export default function UserGrid({ data }) {
   ]);
 
   const defaultColDef = {
-    flex: 1,
+    // flex: 1,
   };
 
   const autoSizeStrategy = {
@@ -41,8 +41,8 @@ export default function UserGrid({ data }) {
     <div
       className={"ag-theme-quartz-dark"}
       style={{
-        width: "70vw",
-        height: "70vh",
+        width: "90vw",
+        height: "85vh",
         marginTop: "20px",
         marginBottom: "20px",
       }}
