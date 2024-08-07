@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logout } from "@/components/Logout";
 import { SignInButton } from "@/components/SignIn";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 // import React, { createContext } from 'react';
 
 import styles from "./styles.module.css";
@@ -22,7 +22,7 @@ export default async function Header() {
       >
         <div>
           <Image
-            src="/Assets/QuizziePop.Png"
+            src="/Assets/QuizziePop.png"
             alt="GitHub Logo"
             width={500}
             height={70}
@@ -37,7 +37,7 @@ export default async function Header() {
     <header className={`${styles.header}`}>
       <div>
         <Image
-          src="/Assets/QuizziePop.Png"
+          src="/Assets/QuizziePop.png"
           alt="GitHub Logo"
           width={500}
           height={70}
