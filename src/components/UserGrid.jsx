@@ -3,7 +3,7 @@ import { AgGridReact } from "ag-grid-react"; // React Data Grid Component
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the Data Grid
 import React, { useEffect, useState } from "react";
-
+import CellQuestionLinks from "./CellQuestionLink";
 export default function UserGrid({ data }) {
   // Row Data: The data to be displayed.
   const [rowData, setRowData] = useState([]);
@@ -17,6 +17,11 @@ export default function UserGrid({ data }) {
     { field: "answer_2", headerName: "Incorrect Answer" },
     { field: "answer_3", headerName: "Incorrect Answer" },
     { field: "answer_4", headerName: "Incorrect Answer" },
+    {
+      headerName: "Link",
+      field: "id",
+      cellRenderer: CellQuestionLinks,
+    },
   ]);
 
   const defaultColDef = {
