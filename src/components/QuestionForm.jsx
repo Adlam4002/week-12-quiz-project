@@ -54,22 +54,21 @@ export default async function QuestionForm() {
     <>
       <form
         action={handleQuestion}
-        className="flex flex-col p-16 space-y-2 text-black items-center"
+        className="w-80 mx-auto p-6 bg-white rounded-lg shadow-lg flex flex-col space-y-4 m-4"
       >
-        {" "}
-        <h1 className="text-white text-xl">
-          Please enter your question below{" "}
+        <h1 className="text-center text-xl font-bold text-gray-700">
+          Please enter your question below
         </h1>
-        <label className="text-white" htmlFor="question">
+        <label className="text-gray-700" htmlFor="question">
           Please enter your question:
         </label>
         <textarea
           name="question"
-          className="text-black px-3 py-2 rounded"
+          className="w-full p-2 border rounded-lg text-gray-700"
           placeholder="How many legs does a dog have?"
           required
         />
-        <label className="text-white" htmlFor="correct_answer">
+        <label className="text-gray-700" htmlFor="correct_answer">
           Enter the correct answer:
         </label>
         <input
@@ -77,23 +76,46 @@ export default async function QuestionForm() {
           name="correct_answer"
           required
           placeholder="4"
-        ></input>
-        <label className="text-white" htmlFor="answer_2">
-          Enter an inccorect answer:
+          className="w-full p-2 border rounded-lg text-gray-700"
+        />
+        <label className="text-gray-700" htmlFor="answer_2">
+          Enter an incorrect answer:
         </label>
-        <input type="text" name="answer_2" required placeholder="2"></input>
-        <label className="text-white" htmlFor="answer_3">
-          Enter another inccorect answer:
+        <input
+          type="text"
+          name="answer_2"
+          required
+          placeholder="2"
+          className="w-full p-2 border rounded-lg text-gray-700"
+        />
+        <label className="text-gray-700" htmlFor="answer_3">
+          Enter another incorrect answer:
         </label>
-        <input type="text" name="answer_3" required placeholder="6"></input>
-        <label className="text-white" htmlFor="answer_4">
-          Enter another inccorect answer:
+        <input
+          type="text"
+          name="answer_3"
+          required
+          placeholder="6"
+          className="w-full p-2 border rounded-lg text-gray-700"
+        />
+        <label className="text-gray-700" htmlFor="answer_4">
+          Enter another incorrect answer:
         </label>
-        <input type="text" name="answer_4" required placeholder="3"></input>
-        <label className="text-white" htmlFor="category">
+        <input
+          type="text"
+          name="answer_4"
+          required
+          placeholder="3"
+          className="w-full p-2 border rounded-lg text-gray-700"
+        />
+        <label className="text-gray-700" htmlFor="category">
           Pick a category
         </label>
-        <select name="category" required>
+        <select
+          name="category"
+          required
+          className="w-full p-2 border rounded-lg text-gray-700"
+        >
           <option value="">Pick one...</option>
           <option value="General Knowledge">General Knowledge</option>
           <option value="Entertainment: Books">Entertainment: Books</option>
@@ -132,16 +154,22 @@ export default async function QuestionForm() {
           <option value="Animals">Animals</option>
           <option value="Vehicles">Vehicles</option>
         </select>
-        <label className="text-white" htmlFor="difficulty">
+        <label className="text-gray-700" htmlFor="difficulty">
           Difficulty
         </label>
-        <select name="difficulty" required>
+        <select
+          name="difficulty"
+          required
+          className="w-full p-2 border rounded-lg text-gray-700"
+        >
           <option value="">Pick a difficulty...</option>
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
-        <button>Submit!</button>
+        <button className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+          Submit!
+        </button>
       </form>
     </>
   );
