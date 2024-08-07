@@ -21,11 +21,19 @@ export default function QuizFormComponent() {
   return (
     <form
       action={handleQuestion}
-      className="flex flex-col p-16 space-y-2 text-black items-center"
+      className="w-80 mx-auto p-6 bg-white rounded-lg shadow-lg flex flex-col space-y-4 m-4"
     >
-      {" "}
-      <h1 className="text-white text-xl">Set up your Quiz </h1>
-      <select name="category" required>
+      <h1 className="text-center text-xl font-bold text-gray-700">
+        Set up your Quiz
+      </h1>
+      <label className="text-gray-700" htmlFor="category">
+        Pick a category
+      </label>
+      <select
+        name="category"
+        required
+        className="w-full p-2 border rounded-lg text-gray-700"
+      >
         <option value="">Pick one...</option>
         <option value="General Knowledge">General Knowledge</option>
         <option value="Entertainment: Books">Entertainment: Books</option>
@@ -64,16 +72,20 @@ export default function QuizFormComponent() {
         <option value="Animals">Animals</option>
         <option value="Vehicles">Vehicles</option>
       </select>
-      <label className="text-white" htmlFor="difficulty">
+      <label className="text-gray-700" htmlFor="difficulty">
         Difficulty
       </label>
-      <select name="difficulty" required>
+      <select
+        name="difficulty"
+        required
+        className="w-full p-2 border rounded-lg text-gray-700"
+      >
         <option value="">Pick a difficulty...</option>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
       </select>
-      <label className="text-white" htmlFor="numberOfQuestions">
+      <label className="text-gray-700" htmlFor="numberOfQuestions">
         Number of Questions
       </label>
       <input
@@ -83,8 +95,11 @@ export default function QuizFormComponent() {
         placeholder="1"
         min="1"
         max="20"
-      ></input>
-      <button>Let&apos;s start popping!</button>
+        className="w-full p-2 border rounded-lg text-gray-700"
+      />
+      <button className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+        Let&apos;s start popping!
+      </button>
     </form>
   );
 }
