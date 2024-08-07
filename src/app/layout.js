@@ -3,6 +3,7 @@ import "./globals.css";
 import { Providers } from "@/Providers";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { AuroraHero } from "@/components/Framer/AuroraHero";
 
 const exo2 = Exo_2({ subsets: ["latin"], weights: [500, 800] });
 
@@ -15,9 +16,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={exo2.className}>
-        <Header></Header>
-        <Providers>{children}</Providers>
-        <Footer></Footer>
+        <AuroraHero>
+          <Header></Header>
+          <Providers>{children}</Providers>
+          <Footer></Footer>
+        </AuroraHero>
       </body>
     </html>
   );

@@ -4,6 +4,7 @@
   @apply flex flex-row justify-center;
   @apply p-2;
   @apply bottom-0;
+  height: fit-content;
 }
 
 .ul {
