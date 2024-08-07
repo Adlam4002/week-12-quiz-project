@@ -41,8 +41,8 @@ export default function UserGrid({ data }) {
     <div
       className={"ag-theme-quartz-dark"}
       style={{
-        width: "70vw",
-        height: "70vh",
+        width: "90vw",
+        height: "85vh",
         marginTop: "20px",
         marginBottom: "20px",
       }}

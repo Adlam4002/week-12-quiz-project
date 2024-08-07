@@ -30,6 +30,7 @@ export default function Grid({ data }) {
   const defaultColDef = {
     // flex: 1,
   };
+  const paginationPageSize = 25;
 
   const autoSizeStrategy = {
     type: "fitCellContents",
@@ -55,6 +56,7 @@ export default function Grid({ data }) {
         columnDefs={colDefs}
         defaultColDef={defaultColDef}
         pagination={true}
+        paginationPageSize={paginationPageSize}
       />
     </div>
   );
