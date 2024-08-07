@@ -15,15 +15,20 @@ export default async function QuestionsListIdPage({ params }) {
   ];
   console.log(data);
   return (
-    <main className="flex flex-col items-center">
-      <div id="question-display" className="shadow-lg ">
+    <main className="flex flex-col items-center w-3/12 mx-auto p-6 bg-white rounded-lg shadow-lg space-y-4 m-4">
+      <div
+        /*id="question-display"*/ className="text-center text-lg font-semibold text-white bg-blue-700 rounded-lg py-2 px-4 shadow-md min-w-full"
+      >
         <div
-          id="thequestion"
+          // id="thequestion"
+          className="p-4 "
           dangerouslySetInnerHTML={{ __html: data.question }}
         ></div>
-        <div id="answers-boxes">
-          <Shuffler answers={answers} />
-        </div>
+      </div>
+      <div
+        /*id="answers-boxes"*/ className="text-center text-lg font-semibold text-white bg-blue-500 rounded-lg py-2 px-4 min-w-full shadow-md"
+      >
+        <Shuffler answers={answers} />
       </div>
       <CommentsSection questionId={params.qid} />
     </main>

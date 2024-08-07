@@ -14,13 +14,13 @@ export default async function CommentSection({ questionId }) {
   );
   const data = response.rows;
   return (
-    <div className="flex flex-col items-center w-9/10 md:w-3/5">
+    <div className="flex flex-col items-center ">
       <CommentsForm qid={questionId} />
       {data.map((item) => (
         <div
           key={item.id}
           id="comments-box"
-          className="flex flex-col items-center bg rounded w-9/10 md:w-3/5 m-2 shadow-md bg-neutral-700"
+          className="flex flex-col items-center rounded-lg w-4/5 m-2 shadow-md bg-blue-600"
         >
           <div id="comments-username" className="self-start ml-2 italic">
             {item.username}

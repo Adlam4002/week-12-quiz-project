@@ -13,8 +13,6 @@
   overflow: hidden;
 }
 
-
-
 body {
   min-height: 100vh;
   background-color: rgb(209, 128, 21);
@@ -90,6 +88,7 @@ button:hover {
 #profile-correct-answer:hover {
   background-color: rgba(116, 255, 116, 0.62);
   transition-duration: 0.5s;
+  border-radius: 0.5rem;
 }
 #question-list {
   color: rgb(38 38 38);
