@@ -1,0 +1,15 @@
+.usercomment {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.button {
+    @apply border-solid border-2 bg-neutral-700 border-slate-800 hover:border-sky-500;
+    transition: box-shadow 0.3s ease; 
+}
+
+.button:hover {
+    box-shadow: 0 0 10px 2px rgba(0, 191, 255, 0.75); 
+    /* reused button styles from header component */
+}
