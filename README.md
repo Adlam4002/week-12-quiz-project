@@ -30,4 +30,10 @@ We also worked on the home page. It now renderers a 3-question sample quiz if th
 
 ## Day 5
 
+In the morning, we had a meeting to discuss our plans as we had achieved our MVP. We wanted to change the styling from a simple but nice orange and blue scheme to an animated background made using Framer Motion. We settled on waves of different blues moving around. We decided that we would change the header and footer to match our new styling. We made them transparent so that we could see the background through it. We also changed the layout of all of our display divs, we removed the borders and added shadow to achieve a more subtle transition to other elements. We noticed that in mobile view the tables were a little difficult to read so we changed the formatting to display two columns primarily but made the table scrollable in the y-axis.
+
+We also wanted more than just GitHub as a method of signing in so we implemented Google accounts and Discord accounts to our OAuth set-up. Today we also implemented commenting on the questions. When a user is on a question page, they are presented with a form that allows them to submit a comment. The comments are stored on our database with a reference to the question it is about and the user that submitted it. The comments are displayed along with the username of who submitted it. We created the comment form as a component. While we made this, we tried out the live share feature on VSCode. This allowed all of us to code collaboratively at the same time, it also allowed us to access the localhost version of the site together. This was very useful as we didn’t need to keep sharing our screens as we coded together. We also refactored the code we were using for our sign-in and sign-out functions.
+
+## Day 6
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
