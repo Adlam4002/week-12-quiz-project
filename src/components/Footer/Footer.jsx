@@ -26,8 +26,11 @@ const Footer = () => {
             <Accordion.Content className={`${styles.accordionContent}`}>
               <nav>
                 <ul className={`${styles.ul}`}>
-                <h2>Our Project:</h2>
-                  <a className={`${styles.links}`} href="https://github.com/Adlam4002/week-12-quiz-project">
+                  <h2>Our Project:</h2>
+                  <a
+                    className={`${styles.links}`}
+                    href="https://github.com/Adlam4002/week-12-quiz-project"
+                  >
                     <Image
                       src="/Assets/github-mark-white.png"
                       alt="GitHub Logo"
@@ -35,7 +38,10 @@ const Footer = () => {
                       height={50}
                     />
                   </a>
-                  <a className={`${styles.links}`} href="https://www.linkedin.com/in/alex-adlam-3456b3a5/">
+                  <a
+                    className={`${styles.links}`}
+                    href="https://www.linkedin.com/in/alex-adlam-3456b3a5/"
+                  >
                     <Image
                       src="/Assets/LI-Alex.png"
                       alt="GitHub Logo"
@@ -43,7 +49,10 @@ const Footer = () => {
                       height={50}
                     />
                   </a>
-                  <a className={`${styles.links}`} href="https://www.linkedin.com/in/daniel-szabo-455134248/">
+                  <a
+                    className={`${styles.links}`}
+                    href="https://www.linkedin.com/in/daniel-szabo-455134248/"
+                  >
                     <Image
                       src="/Assets/LI-Daniel.png"
                       alt="GitHub Logo"
@@ -51,7 +60,10 @@ const Footer = () => {
                       height={50}
                     />
                   </a>
-                  <a className={`${styles.links}`} href="https://www.linkedin.com/in/joshua-day-ba1652311/">
+                  <a
+                    className={`${styles.links}`}
+                    href="https://www.linkedin.com/in/joshua-day-ba1652311/"
+                  >
                     <Image
                       src="/Assets/LI-Josh.png"
                       alt="GitHub Logo"
