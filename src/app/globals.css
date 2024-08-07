@@ -7,14 +7,13 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
 .ag-paging-panel {
   min-height: 70px;
   overflow: hidden;
 }
-main {
-  min-height: 100vh;
-  margin-bottom: -15vh;
-}
+
+
 
 body {
   min-height: 100vh;
