@@ -11,23 +11,24 @@ export default function Grid({ data }) {
 
   // Column Definitions: Defines & controls grid columns.
   const [colDefs, setColDefs] = useState([
-    { field: "category", filter: true, width: 300 },
-    { field: "difficulty", filter: true },
-    { field: "question", width: 750, filter: true },
-    { field: "correct_answer", headerName: "Correct Answer" },
-    { field: "answer_2", headerName: "Incorrect Answer" },
-    { field: "answer_3", headerName: "Incorrect Answer" },
-    { field: "answer_4", headerName: "Incorrect Answer" },
-    { field: "username", filter: true },
+    { field: "category", filter: true, width: 200 },
+    { field: "question", width: 500, filter: true },
+    { field: "difficulty", filter: true, width: 100 },
+    { field: "correct_answer", headerName: "Correct Answer", width: 150 },
+    { field: "answer_2", headerName: "Incorrect Answer", width: 150 },
+    { field: "answer_3", headerName: "Incorrect Answer", width: 150 },
+    { field: "answer_4", headerName: "Incorrect Answer", width: 150 },
+    { field: "username", filter: true, width: 150 },
     {
       headerName: "Link",
       field: "id",
       cellRenderer: CellQuestionLinks,
+      width: 200,
     },
   ]);
 
   const defaultColDef = {
-    flex: 1,
+    // flex: 1,
   };
 
   const autoSizeStrategy = {

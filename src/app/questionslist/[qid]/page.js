@@ -16,7 +16,7 @@ export default async function QuestionsListIdPage({ params }) {
   console.log(data);
   return (
     <main className="flex flex-col items-center">
-      <div id="question-display" className="shadow-lg">
+      <div id="question-display" className="shadow-lg ">
         <div
           id="thequestion"
           dangerouslySetInnerHTML={{ __html: data.question }}

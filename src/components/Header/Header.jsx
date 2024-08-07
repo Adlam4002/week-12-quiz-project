@@ -43,7 +43,7 @@ export default async function Header() {
           height={70}
         />
       </div>
-      <nav>
+      <nav className="">
         <ul className={`${styles.ul}`}>
           <li>
             <button className={`${styles.button}`}>
