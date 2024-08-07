@@ -10,7 +10,7 @@ export default async function Header() {
 
   if (!session) {
     return (
-      <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex justify-around items-center p-4 h-16 shadow-md">
+      <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-16 shadow-md">
         <div>
           <Link href="/">
             <Image
@@ -27,8 +27,8 @@ export default async function Header() {
   }
 
   return (
-    <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex justify-around items-center p-4 h-16 shadow-md">
-      <div>
+    <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md">
+      <div className="mb-2 md:mb-0">
         <Link href="/">
           <Image
             src="/Assets/QuizziePop.png"
@@ -38,34 +38,34 @@ export default async function Header() {
           />
         </Link>
       </div>
-      <nav className="flex flex-row gap-4">
+      <nav className="flex flex-col md:flex-row gap-2 md:gap-4">
         <Link
           href="/"
-          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50"
+          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50 text-center"
         >
           Home
         </Link>
         <Link
           href="/randomq"
-          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50"
+          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50 text-center"
         >
           Random Question
         </Link>
         <Link
           href="/newquestion"
-          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50"
+          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50 text-center"
         >
           Submit a Question
         </Link>
         <Link
           href="/questionslist"
-          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50"
+          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50 text-center"
         >
           View Questions
         </Link>
         <Link
           href={`/userprofile/${session.user.id}`}
-          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50"
+          className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50 text-center"
         >
           My Profile
         </Link>

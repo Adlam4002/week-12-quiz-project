@@ -21,14 +21,14 @@ export default async function CommentsForm({ qid }) {
     redirect(`/questionslist/${qid}`);
   }
   return (
-    <div className="w-9/10 md:w-3/5">
+    <>
       <form
         action={handleSubmit}
-        className="  m-2 p-2 rounded shadow-lg bg-slate-600 flex-col flex items-center"
+        className="p-2 rounded-lg shadow-lg bg-slate-600 flex-col flex items-center min-w-full"
       >
         <lable htmlFor="comment">Leave a comment?</lable>
         <textarea
-          className="text-black m-2 md:w-auto"
+          className="text-black m-2 md:w-auto w-9/12"
           type="text"
           name="comment"
           placeholder="Type your comment here..."
@@ -36,6 +36,6 @@ export default async function CommentsForm({ qid }) {
         />
         <button>Submit</button>
       </form>
-    </div>
+    </>
   );
 }
