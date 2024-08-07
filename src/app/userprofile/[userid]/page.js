@@ -24,25 +24,29 @@ export default async function UserProfilePage() {
   console.log(questionsData);
   if (!session) {
     return (
-      <div className="flex items-center flex-col">
-        Please log in to view your profile!
-        <br />
-        <SignInButton />
+      <div className="w-80 mx-auto p-6 bg-white rounded-lg shadow-lg flex flex-col items-center space-y-4 m-4">
+        <div className="text-center text-gray-700">
+          Please log in to view your profile!
+          <br />
+          <SignInButton />
+        </div>
       </div>
     );
   }
   return (
-    <main>
-      <div className="flex justify-center">
-        <div id="user-info">
-          <h1>Welcome: {userInformation.name}</h1>
-          <h1>Your average score is : ###</h1>
-        </div>
+    <main className="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg space-y-4 w-fit mx-auto m-4">
+      <div className="w-full text-center">
+        <h1 className="text-xl font-bold text-gray-700">
+          Welcome: {userInformation.name}
+        </h1>
+        <h1 className="text-gray-700">Your average score is: ###</h1>
       </div>
-      <div className="flex flex-col items-center">
-        <h1>Your questions:</h1>
-        <UserGrid data={questionsData} />
+      <div className="w-full">
+        <h1 className="text-center text-xl font-bold text-gray-700">
+          Your questions:
+        </h1>
       </div>
+      <UserGrid data={questionsData} />
     </main>
   );
 }
