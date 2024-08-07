@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logout } from "@/components/Logout";
 import { SignInButton } from "@/components/SignIn";
+import { motion } from "framer-motion";
+// import React, { createContext } from 'react';
 
 import styles from "./styles.module.css";
 
@@ -12,9 +14,19 @@ export default async function Header() {
 
   if (!session) {
     return (
-      <header className={`${styles.header}`}>
+      </*motion.*/ header
+        className={`${styles.header}`}
+        initial={{ scale: 1 }}
+        animate={{ scale: 1.05 }}
+        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+      >
         <div>
-          <h1 className="title">QuizziePop! </h1>
+          <Image
+            src="/Assets/QuizziePop.Png"
+            alt="GitHub Logo"
+            width={500}
+            height={70}
+          />
         </div>
         <SignInButton />
       </header>
@@ -24,7 +36,12 @@ export default async function Header() {
   return (
     <header className={`${styles.header}`}>
       <div>
-        <h1 className="title">QuizziePop! </h1>
+        <Image
+          src="/Assets/QuizziePop.Png"
+          alt="GitHub Logo"
+          width={500}
+          height={70}
+        />
       </div>
       <nav>
         <ul className={`${styles.ul}`}>
@@ -45,9 +62,7 @@ export default async function Header() {
           </li>
           <li>
             <button className={`${styles.button}`}>
-
               <Link href="/questionslist">View Questions</Link>
-
             </button>
           </li>
           <li>
