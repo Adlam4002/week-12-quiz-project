@@ -1,7 +1,28 @@
-/* Tailwind CSS classes in your CSS file */
 .header {
-  @apply w-full bg-neutral-800 text-slate-200 flex flex-row justify-between p-2 h-16;
+  @apply w-full bg-neutral-800 text-slate-200 flex flex-row justify-between p-2 h-16 items-center;
 }
+
+/* @keyframes rgbAnimation {
+    0% {
+        border-color: red;
+    }
+    33% {
+        border-color: green;
+    }
+    66% {
+        border-color: blue;
+    }
+    100% {
+        border-color: red;
+    }
+} */
+
+/* .header {
+    border-style: solid;
+    border-width: 4px;
+    padding: 16px;
+    animation: rgbAnimation 2s infinite linear;
+} */
 
 .button {
   @apply border-solid border-2 bg-neutral-700 border-slate-800 hover:border-sky-500;
