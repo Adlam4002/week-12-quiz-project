@@ -69,7 +69,7 @@ export default async function Home() {
               width={250}
               height={250}
             /> */}
-            <QuizFormComponent></QuizFormComponent>
+            <QuizFormComponent />
           </div>
         </main>
       </div>
