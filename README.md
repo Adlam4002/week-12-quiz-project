@@ -28,6 +28,18 @@ If you would like to test this project out for yourself, you can fork this repo.
 
 ![Folder structure of the project](/public/Folder%20structure.png)
 
+# User stories
+
+- As a user I want to be able to answer multiple choice question.
+
+- As a user I would like to pick the number of questions in my quiz.
+
+- As a user I would like an indication of whether my answer was correct or not.
+
+- As a user I would like to be able to view a list of all questions.
+
+- As a user I would like to leave feedback on questions.
+
 # Reflections
 
 ## Day 1
@@ -57,5 +69,7 @@ In the morning, we had a meeting to discuss our plans as we had achieved our MVP
 We also wanted more than just GitHub as a method of signing in so we implemented Google accounts and Discord accounts to our OAuth set-up. Today we also implemented commenting on the questions. When a user is on a question page, they are presented with a form that allows them to submit a comment. The comments are stored on our database with a reference to the question it is about and the user that submitted it. The comments are displayed along with the username of who submitted it. We created the comment form as a component. While we made this, we tried out the live share feature on VSCode. This allowed all of us to code collaboratively at the same time, it also allowed us to access the localhost version of the site together. This was very useful as we didn’t need to keep sharing our screens as we coded together. We also refactored the code we were using for our sign-in and sign-out functions.
 
 ## Day 6
+
+As this was the final day much of the time was spent as a group fine-tuning the project. We went through the code together to correct spelling mistakes. We also tried all different sizes of screens to make sure the layout was okay in all reasonable sizes. We spent time changing the header component into a client component so that we could conditionally render a different header based on screen size. As screen space is at a premium on mobile, we implemented a pop-out menu rather than a header permanently along the top of the screen. We changed the application settings in all our authentication routes to work on our deployed site rather than a local development environment. We then gave our deployment the necessary environment variables to deal with authentication.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

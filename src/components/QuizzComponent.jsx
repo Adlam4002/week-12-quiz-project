@@ -45,10 +45,8 @@ export default function QuizzComponent({ params }) {
     setChecked(true);
     if (answer === correct_answer) {
       setSelectedAnswer(true);
-      // console.log("Correct Answer");
     } else {
       setSelectedAnswer(false);
-      // console.log("Incorrect Answer");
     }
   };
 
@@ -181,16 +179,3 @@ export default function QuizzComponent({ params }) {
     </div>
   );
 }
-
-// Old buttons:
-// {/* <button className="flex-1 py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
-//             <div dangerouslySetInnerHTML={{ __html: incorrect_answers[1] }} />
-//           </button>
-//         </div>
-//         <div className="flex justify-between space-x-4">
-//           <button className="flex-1 py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
-//             <div dangerouslySetInnerHTML={{ __html: incorrect_answers[2] }} />
-//           </button>
-//           <button className="flex-1 py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
-//             <div dangerouslySetInnerHTML={{ __html: correct_answer }} />
-//           </button> */}

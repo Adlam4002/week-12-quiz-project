@@ -37,7 +37,7 @@ export default async function QuestionForm() {
         userId,
       ]
     );
-    // these are placeholder locations and when a profile page and questionlist exists they will need to be updated
+
     revalidatePath("/questionslist");
     redirect("/");
   }
@@ -148,9 +148,9 @@ export default async function QuestionForm() {
           <option value="Sports">Sports</option>
           <option value="Geography">Geography</option>
           <option value="History">History</option>
-          <option value="Polotics">Polotics</option>
+          <option value="Politics">Politics</option>
           <option value="Art">Art</option>
-          <option value="Celebrity">Celebrity</option>
+          <option value="Celebrities">Celebrities</option>
           <option value="Animals">Animals</option>
           <option value="Vehicles">Vehicles</option>
         </select>
