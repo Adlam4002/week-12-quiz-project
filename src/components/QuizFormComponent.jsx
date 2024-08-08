@@ -66,9 +66,9 @@ export default function QuizFormComponent() {
         <option value="Sports">Sports</option>
         <option value="Geography">Geography</option>
         <option value="History">History</option>
-        <option value="Politics">Polotics</option>
+        <option value="Politics">Politics</option>
         <option value="Art">Art</option>
-        <option value="Celebrities">Celebrity</option>
+        <option value="Celebrities">Celebrities</option>
         <option value="Animals">Animals</option>
         <option value="Vehicles">Vehicles</option>
       </select>
