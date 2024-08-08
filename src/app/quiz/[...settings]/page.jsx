@@ -19,14 +19,6 @@ export default async function QuizPage({ params }) {
     [encodedStr, params.settings[1], params.settings[2]]
   );
   const data = response.rows;
-  // console.log("Data in quiz page:" + data);
-
-  // console.log(
-  //   "quizz page params: " +
-  //     params.settings[0] +
-  //     params.settings[1] +
-  //     params.settings[2]
-  // );
 
   return (
     <main className="text-center text-lg font-bold text-white flex flex-col items-center">

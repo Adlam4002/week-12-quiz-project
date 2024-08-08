@@ -39,7 +39,6 @@ export default async function UserProfilePage() {
         <h1 className="text-xl font-bold text-gray-700">
           Welcome: {userInformation.name}
         </h1>
-        {/* <h1 className="text-gray-700">Your average score is: ###</h1> */}
       </div>
       <div className="w-full">
         <h1 className="text-center text-xl font-bold text-gray-700">

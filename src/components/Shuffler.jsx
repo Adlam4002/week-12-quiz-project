@@ -1,6 +1,6 @@
 export default function Shuffler({ answers }) {
   let check = answers.slice();
-  // the function bellow is the Durstenfeld shuffle function which is an optimsed version of the Fisher-Yates shuffle. It shuffles in place to so check the correct answer I sliced the array above to have a copy of the original order.
+  // the function below is the Durstenfeld shuffle function which is an optimsed version of the Fisher-Yates shuffle. It shuffles in place to so check the correct answer I sliced the array above to have a copy of the original order.
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
@@ -10,8 +10,7 @@ export default function Shuffler({ answers }) {
     }
   }
   shuffleArray(answers);
-  //   console.log(`OG: ${check}`);
-  //   console.log(`Shuf: ${answers}`);
+
   return (
     <>
       {answers[0] == check[0] ? (
