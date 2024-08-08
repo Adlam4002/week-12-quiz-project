@@ -135,14 +135,26 @@ export default function QuizzComponent({ params }) {
           </div>
           <div>
             {checked ? (
-              <button
-                onClick={nextQuestion}
-                className="w-full py-2 px-4 bg-green text-white rounded-lg hover:bg-blue-600"
-              >
-                {selectedAnswerIndex === question.length - 1
-                  ? "Finish"
-                  : "Next"}
-              </button>
+              showCurrentAnswer ? (
+                <button
+                  disabled
+                  onClick={nextQuestion}
+                  className="w-full py-2 px-4 bg-green text-white rounded-lg hover:bg-blue-600"
+                >
+                  {selectedAnswerIndex === question.length - 1
+                    ? "Finish"
+                    : "Next"}
+                </button>
+              ) : (
+                <button
+                  onClick={nextQuestion}
+                  className="w-full py-2 px-4 bg-green text-white rounded-lg hover:bg-blue-600"
+                >
+                  {selectedAnswerIndex === question.length - 1
+                    ? "Finish"
+                    : "Next"}
+                </button>
+              )
             ) : (
               <button
                 disabled
