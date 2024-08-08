@@ -10,9 +10,9 @@ export default function UserGrid({ data }) {
 
   // Column Definitions: Defines & controls grid columns.
   const [colDefs, setColDefs] = useState([
-    { field: "category", filter: true, width: 200 },
+    { field: "question", width: 200 },
+    { field: "category", filter: true, width: 175 },
     { field: "difficulty", filter: true },
-    { field: "question", width: 500 },
     { field: "correct_answer", headerName: "Correct Answer" },
     { field: "answer_2", headerName: "Incorrect Answer" },
     { field: "answer_3", headerName: "Incorrect Answer" },
@@ -23,10 +23,6 @@ export default function UserGrid({ data }) {
       cellRenderer: CellQuestionLinks,
     },
   ]);
-
-  const defaultColDef = {
-    // flex: 1,
-  };
 
   const autoSizeStrategy = {
     type: "fitGridWidth",
@@ -47,13 +43,7 @@ export default function UserGrid({ data }) {
         marginBottom: "20px",
       }}
     >
-      <AgGridReact
-        rowData={rowData}
-        columnDefs={colDefs}
-        defaultColDef={defaultColDef}
-        pagination={true}
-        autoSizeStrategy={autoSizeStrategy}
-      />
+      <AgGridReact rowData={rowData} columnDefs={colDefs} pagination={true} />
     </div>
   );
 }
