@@ -15,7 +15,7 @@ export default function Header() {
         <div>
           <Link href="/">
             <Image
-              src="/Assets/QuizziePop.png"
+              src="/Assets/QuizzieP.png"
               alt="GitHub Logo"
               width={200}
               height={35}
@@ -32,7 +32,7 @@ export default function Header() {
       <div className="mb-2 md:mb-0">
         <Link href="/">
           <Image
-            src="/Assets/QuizziePop.png"
+            src="/Assets/QuizzieP.png"
             alt="GitHub Logo"
             width={200}
             height={35}

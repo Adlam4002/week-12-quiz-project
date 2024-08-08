@@ -31,7 +31,7 @@ export default async function QuizPage({ params }) {
   return (
     <main className="text-center text-lg font-bold text-white flex flex-col items-center">
       <div className="flex flex-col items-center">
-        <h1>Popin&apos; time!</h1>
+        <h1>Poppin&apos; time!</h1>
         <QuizzComponent params={data} />
       </div>
     </main>

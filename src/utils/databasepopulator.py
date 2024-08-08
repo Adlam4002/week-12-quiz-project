@@ -27,7 +27,10 @@ def fetch_trivia_data(amount=50):
         return []
 
 
-# Requesting fetch for 500 questions in itterations of 10
+# Requesting fetch for 500 questions in itterations of 50, i will say this didnt work as intended, i could leave
+# the script running which would keep pooling unique data due to the created token but it didn't stop after 500 questions
+# and instead kept requesting questions, this ended up being beneficial though as we used it collect all verified
+# quiz questions for our database. 
 total_questions = 500
 questions_per_request = 50
 
@@ -70,7 +73,8 @@ while collected_questions < total_questions:
 
     print(f"Collected and inserted {collected_questions} questions so far.")
 
-    # Delay to handle API rate limiting
+    # Delay to handle API requests due to restriction of 1 request every 5 seconds so i set the delay to a 
+    # 6 second timer just to make sure i avoided overpulling
     time.sleep(6)
 
 print("Data insertion completed.")
