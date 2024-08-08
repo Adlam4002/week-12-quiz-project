@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logout } from "@/components/Logout";
 import { SignInButton } from "@/components/SignIn";
-import { useState } from "react"; 
+import { useState } from "react";
 
 export default function Header() {
   const { data: session, status } = useSession();
@@ -15,7 +15,7 @@ export default function Header() {
 
   if (!session) {
     return (
-      <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-16 shadow-md">
+      <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md">
         <div>
           <Link href="/">
             <Image
@@ -49,9 +49,8 @@ export default function Header() {
           className="px-3 py-2 rounded-lg bg-white bg-opacity-50 text-center"
         >
           Menu
-          
-        </div >
-        {isDropdownOpen && (   
+        </div>
+        {isDropdownOpen && (
           <nav className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-slate-300 bg-opacity-70 backdrop-blur-md p-4 rounded-lg shadow-lg flex flex-col items-center w-64 z-50">
             <Link
               href="/"
