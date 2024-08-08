@@ -37,7 +37,7 @@ export default async function QuestionForm() {
         userId,
       ]
     );
-    // these are placeholder locations and when a profile page and questionlist exists they will need to be updated
+
     revalidatePath("/questionslist");
     redirect("/");
   }

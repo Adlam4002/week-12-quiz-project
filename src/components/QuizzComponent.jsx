@@ -44,9 +44,11 @@ export default function QuizzComponent({ params }) {
     setChecked(true);
     if (answer === correct_answer) {
       setSelectedAnswer(true);
+
   
     } else {
       setSelectedAnswer(false);
+
 
     }
   };
@@ -192,5 +194,4 @@ export default function QuizzComponent({ params }) {
     </div>
   );
 }
-
 
