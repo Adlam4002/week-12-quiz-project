@@ -6,6 +6,10 @@ A group project by Alex Adlam, Josh Day and Daniel Szabo. For this project we de
 
 ## A link to our deployed app on Vercel: https://week-12-quiz-project.vercel.app
 
+![Lighthouse score](/public/Thursday%20Lighthouse%20score.png)
+
+![Database schema](/public/week%2012%20schema.png)
+
 # Reflections
 
 ## Day 1
