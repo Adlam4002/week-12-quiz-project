@@ -7,7 +7,7 @@ export const AuroraHero = ({ children }) => {
     <motion.section
       animate={{
         backgroundImage: [
-          "radial-gradient(90% 90% at 30% 0%, #1BFFFF 20%,  #2E3192)", // radial-gradient(0% 0% at 50% 0%, #1BFFFF 50%,  #2E3192)
+          "radial-gradient(90% 90% at 30% 0%, #1BFFFF 20%,  #2E3192)", 
           "radial-gradient(90% 90% at 70% 0%, #1BFFFF 50%,  #2E3192)",
         ],
       }}

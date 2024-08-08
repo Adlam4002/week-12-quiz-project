@@ -28,7 +28,7 @@ export default function Grid({ data }) {
   ]);
 
   const defaultColDef = {
-    // flex: 1,
+
   };
   const paginationPageSize = 25;
 

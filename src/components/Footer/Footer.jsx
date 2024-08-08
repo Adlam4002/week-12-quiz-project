@@ -37,71 +37,7 @@ const Footer = () => {
             Week 12 Assignment - Student Demo
           </Link>
         </h1>
-        {/* <Accordion.Root className="mt-4 w-full" type="single" collapsible>
-          <Accordion.Item
-            className="border border-gray-300 rounded-lg mb-4"
-            value="item-1"
-          >
-            <Accordion.Header className="flex justify-center p-2">
-              <Accordion.Trigger className="bg-transparent border-none text-lg cursor-pointer">
-                About Us
-              </Accordion.Trigger>
-            </Accordion.Header>
-            <Accordion.Content className="flex flex-col items-center p-4">
-              <nav>
-                <ul className="flex flex-row gap-8 justify-center">
-                  <li>
-                    <h2>Our Project:</h2>
-                    <Link
-                      href="https://github.com/Adlam4002/week-12-quiz-project"
-                      className="flex"
-                    >
-                      <Image
-                        src="/Assets/github-mark-white.png"
-                        alt="GitHub Logo"
-                        width={50}
-                        height={50}
-                      />
-                    </Link>
-                    <Link
-                      href="https://www.linkedin.com/in/alex-adlam-3456b3a5/"
-                      className="flex"
-                    >
-                      <Image
-                        src="/Assets/LI-Alex.png"
-                        alt="LinkedIn Logo"
-                        width={50}
-                        height={50}
-                      />
-                    </Link>
-                    <Link
-                      href="https://www.linkedin.com/in/daniel-szabo-455134248/"
-                      className="flex"
-                    >
-                      <Image
-                        src="/Assets/LI-Daniel.png"
-                        alt="LinkedIn Logo"
-                        width={50}
-                        height={50}
-                      />
-                    </Link>
-                    <Link
-                      href="https://www.linkedin.com/in/joshua-day-ba1652311/"
-                      className="flex"
-                    >
-                      <Image
-                        src="/Assets/LI-Josh.png"
-                        alt="LinkedIn Logo"
-                        width={50}
-                        height={50}
-                      />
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </Accordion.Content>
-          </Accordion.Item>
-        </Accordion.Root> */}
+        
       </div>
     </footer>
   );

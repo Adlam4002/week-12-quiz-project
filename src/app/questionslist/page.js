@@ -10,8 +10,6 @@ export default async function QuestionsListPage() {
      
           `);
   let data = response.rows;
-  // data[17].question = data[17].question.replaceAll("&quot;", '"');
-  // console.log(data[17].question);
   data.forEach((item) => {
     item.question = item.question.replaceAll("&amp;", "&");
     item.question = item.question.replaceAll("&quot;", '"');
@@ -32,27 +30,14 @@ export default async function QuestionsListPage() {
     item.answer_4 = item.answer_4.replaceAll("&quot;", '"');
     item.answer_4 = item.answer_4.replaceAll("&#039;", "'");
   });
-  console.log(data);
+  
   return (
     <main id="question-list-page" className="flex flex-col items-center ">
       {" "}
       <div>
         <Grid data={data} />
       </div>
-      {/* <div className="flex flex-col items-center">
-        {data.map((item) => (
-          <>
-            <Link href={`/questionslist/${item.id}`} key={item.id}>
-              <p
-                className="text-2xl"
-                id="question-list"
-                dangerouslySetInnerHTML={{ __html: item.question }}
-              ></p>
-            </Link>
-            <br />
-          </>
-        ))}
-      </div> */}
+    
     </main>
   );
 }

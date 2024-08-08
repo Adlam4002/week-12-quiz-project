@@ -18,7 +18,6 @@ export default function QuizzComponent({ params }) {
   const [question, setQuestion] = useState("");
 
   const data = params;
-  // console.log("data in quizzComp:" + data);
   const [answer_2, setAnswer_2] = useState("");
   const [answer_3, setAnswer_3] = useState("");
   const [answer_4, setAnswer_4] = useState("");
@@ -45,8 +44,12 @@ export default function QuizzComponent({ params }) {
     setChecked(true);
     if (answer === correct_answer) {
       setSelectedAnswer(true);
+
+  
     } else {
       setSelectedAnswer(false);
+
+
     }
   };
 
@@ -133,14 +136,26 @@ export default function QuizzComponent({ params }) {
           </div>
           <div>
             {checked ? (
-              <button
-                onClick={nextQuestion}
-                className="w-full py-2 px-4 bg-green text-white rounded-lg hover:bg-blue-600"
-              >
-                {selectedAnswerIndex === question.length - 1
-                  ? "Finish"
-                  : "Next"}
-              </button>
+              showCurrentAnswer ? (
+                <button
+                  disabled
+                  onClick={nextQuestion}
+                  className="w-full py-2 px-4 bg-green text-white rounded-lg hover:bg-blue-600"
+                >
+                  {selectedAnswerIndex === question.length - 1
+                    ? "Finish"
+                    : "Next"}
+                </button>
+              ) : (
+                <button
+                  onClick={nextQuestion}
+                  className="w-full py-2 px-4 bg-green text-white rounded-lg hover:bg-blue-600"
+                >
+                  {selectedAnswerIndex === question.length - 1
+                    ? "Finish"
+                    : "Next"}
+                </button>
+              )
             ) : (
               <button
                 disabled
@@ -179,3 +194,4 @@ export default function QuizzComponent({ params }) {
     </div>
   );
 }
+
