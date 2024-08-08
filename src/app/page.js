@@ -61,6 +61,12 @@ export default async function Home() {
     <>
       <div className="h-4/5 w-full">
         <main className="text-center text-lg font-bold text-white flex flex-col items-center">
+        <Image
+              src="/Assets/QuizziePopLogoA.gif"
+              alt="GitHub Logo"
+              width={30}
+              height={30}
+            />
           <div className="flex flex-col items-center">
             {/* <Image
               src="/Assets/QuizzieGifOrange.gif"
