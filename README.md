@@ -14,6 +14,10 @@ A group project by Alex Adlam, Josh Day and Daniel Szabo. For this project we de
 
 ![Database schema](/public/week%2012%20schema.png)
 
+### Our folder structure for the application
+
+![Folder structure of the project](/public/Folder%20structure.png)
+
 # Reflections
 
 ## Day 1
