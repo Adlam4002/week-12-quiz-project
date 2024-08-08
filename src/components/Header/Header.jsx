@@ -1,12 +1,13 @@
-import { auth } from "@/auth";
+"use client";
+
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import Image from "next/image";
 import { Logout } from "@/components/Logout";
 import { SignInButton } from "@/components/SignIn";
 
-export default async function Header() {
-  const session = await auth();
+export default function Header() {
+  const { data: session, status } = useSession();
 
   if (!session) {
     return (

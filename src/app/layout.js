@@ -4,7 +4,7 @@ import { Providers } from "@/Providers";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { AuroraHero } from "@/components/Framer/AuroraHero";
-
+import { SessionProvider } from "next-auth/react";
 const exo2 = Exo_2({ subsets: ["latin"], weights: [500, 800] });
 
 export const metadata = {
@@ -17,9 +17,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={exo2.className}>
         <AuroraHero>
-          <Header></Header>
-          <Providers>{children}</Providers>
-          <Footer></Footer>
+          <SessionProvider>
+            <Header></Header>
+            <Providers>{children}</Providers>
+            <Footer></Footer>
+          </SessionProvider>
         </AuroraHero>
       </body>
     </html>

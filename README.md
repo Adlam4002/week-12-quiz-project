@@ -2,15 +2,37 @@
 
 A group project by Alex Adlam, Josh Day and Daniel Szabo. For this project we decided to make a quiz app.
 
+If you would like to test this project out for yourself, you can fork this repo. When you’ve done this, you should clone it to your machine. Within the folder you should run `npm install` this will install all of the packages used and required for the project to function.
+
 ## A link to our GitHub Repo: https://github.com/Adlam4002/week-12-quiz-project
 
 ## A link to our deployed app on Vercel: https://week-12-quiz-project.vercel.app
+
+### Our initial wireframe
+
+![Project wireframe](/public/Wireframe.png)
+
+### Our Trello board
+
+![Project Trello board](/public/Trello%20board.png)
+
+### A Lighthouse report for our site ran on 08/08/2024
+
+![Lighthouse score](/public/Thursday%20Lighthouse%20score.png)
+
+### Our database schema
+
+![Database schema](/public/week%2012%20schema.png)
+
+### Our folder structure for the application
+
+![Folder structure of the project](/public/Folder%20structure.png)
 
 # Reflections
 
 ## Day 1
 
-On day one of the project, we worked together to produce the planning. We created a Trello board and brainstormed ideas to include in the project. We locked down our idea of the minimum variable product, then came up with ideas for stretch goals we could try to implement once we had our fundamental app finished. We created a few wireframed to get a better idea of how we would format the app and what features we wanted and where they will be. We then all worked on one computer with someone sharing their screen to collaboratively produce our database schema. We figured out what tables we would need to integrate OAuth and created them. We then designed and created tables to track users, questions, scores and comments. We created all relationships in advance as to streamline the process one the databases were ready to be populated. We then created a GitHub repository and ensured all members of the team were collaborators on the project. We created an OAuth application to allow us to utilise authentication on the project. We removed the default content that Next.js created when a project was made. We installed all additional packages required by the project. The repo was then updated, and all members clones the repo to their local machines. We then added some basic styling for buttons. We created log in and log out button components. We ran the site in a development environment to test our authentication and database connection was working. Thankfully it was all successful. We then spend the remaining time of the first day further discussing our desired layout and aesthetics. We also produced a small logo to use within the product.
+On day one of the project, we worked together to produce the planning materials. We created a Trello board and brainstormed ideas to include in the project. We locked down our idea of the minimum variable product, then came up with ideas for stretch goals we could try to implement once we had our fundamental app finished. We created a few wireframes to get a better idea of how we would format the app what features we wanted and where they will be. We then all worked on one computer with someone sharing their screen to collaboratively produce our database schema. We figured out what tables we would need to integrate OAuth and created them. We then designed and created tables to track users, questions, and comments. We created all relationships in advance to streamline the process once the databases were ready to be populated. We then created a GitHub repository and ensured all members of the team were collaborators on the project. We created an OAuth application to allow us to utilise authentication on the project. We removed the default content that Next.js created when a project was made. We installed all additional packages required by the project. The repo was then updated, and all members cloned the repo to their local machines. We then added some basic styling for buttons. We created log-in and log-out button components. We ran the site in a development environment to test our authentication and database connection was working. Thankfully it was all successful. We then spend the remaining time of the first day further discussing our desired layout and aesthetics. We also produced a small logo to use within the product.
 
 ## Day 2
 
