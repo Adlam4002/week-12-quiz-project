@@ -19,11 +19,14 @@
 }
 
 @media (max-width: 640px) {
-  .header,
+  .header {
+    @apply flex flex-row;
+  }
   .footer {
     @apply flex-col items-center;
   }
   .ul {
     @apply flex-col gap-2 w-full items-center;
   }
+  
 }
