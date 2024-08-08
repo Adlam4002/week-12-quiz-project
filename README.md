@@ -6,7 +6,11 @@ A group project by Alex Adlam, Josh Day and Daniel Szabo. For this project we de
 
 ## A link to our deployed app on Vercel: https://week-12-quiz-project.vercel.app
 
+### A Lighthouse report for our site ran on 08/08/2024
+
 ![Lighthouse score](/public/Thursday%20Lighthouse%20score.png)
+
+### Our database schema
 
 ![Database schema](/public/week%2012%20schema.png)
 
