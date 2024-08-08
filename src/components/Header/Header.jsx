@@ -5,9 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logout } from "@/components/Logout";
 import { SignInButton } from "@/components/SignIn";
+import { useState } from "react"; 
 
 export default function Header() {
   const { data: session, status } = useSession();
+  const [isDropdownOpen, setDropdownOpen] = useState(false); //using to track visabillity of dropdown menu
+
+  const toggleDropdown = () => setDropdownOpen(!isDropdownOpen); //flips isDropdownOpen state between true and false to open and close the menu
 
   if (!session) {
     return (
@@ -39,7 +43,51 @@ export default function Header() {
           />
         </Link>
       </div>
-      <nav className="flex flex-col md:flex-row gap-2 md:gap-4">
+      <div className="relative md:hidden">
+        <div
+          onClick={toggleDropdown}
+          className="px-3 py-2 rounded-lg bg-white bg-opacity-50 text-center"
+        >
+          Menu
+          
+        </div >
+        {isDropdownOpen && (   
+          <nav className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-slate-300 bg-opacity-70 backdrop-blur-md p-4 rounded-lg shadow-lg flex flex-col items-center w-64 z-50">
+            <Link
+              href="/"
+              className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+            >
+              Home
+            </Link>
+            <Link
+              href="/randomq"
+              className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+            >
+              Random Question
+            </Link>
+            <Link
+              href="/newquestion"
+              className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+            >
+              Submit a Question
+            </Link>
+            <Link
+              href="/questionslist"
+              className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+            >
+              View Questions
+            </Link>
+            <Link
+              href={`/userprofile/${session.user.id}`}
+              className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+            >
+              My Profile
+            </Link>
+            <Logout />
+          </nav>
+        )}
+      </div>
+      <nav className="hidden md:flex flex-col md:flex-row gap-2 md:gap-4">
         <Link
           href="/"
           className="px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-50 text-center"
@@ -75,3 +123,7 @@ export default function Header() {
     </header>
   );
 }
+
+// using md:hidden on the div that contains the dropdown button so the menu only appears on smaller screens
+//aas the md:hidden is hiding the elements on screen size medium+. i am also using md:flex on the nav element
+// to only show it on screen size medium or higher and hide it on smaller screens.
