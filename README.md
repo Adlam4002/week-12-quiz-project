@@ -28,6 +28,16 @@ If you would like to test this project out for yourself, you can fork this repo.
 
 ![Folder structure of the project](/public/Folder%20structure.png)
 
+# Problem domains
+
+Engagement in Learning: Traditional learning methods often lack interactivity and immediate engagement, which can demotivate learners. An interactive quiz app can fill this gap by making learning a dynamic and enjoyable experience.
+
+Immediate Feedback: Learners benefit from immediate feedback to understand their mistakes and grasp concepts effectively. A quiz app needs to provide instant results and explanations to foster better understanding and retention.
+
+Variety and Customization: Users have diverse interests and learning needs, which requires the quiz app to offer a wide range of topics and customizable difficulty levels to cater to different knowledge bases and learning speeds.
+
+Accessibility: Ensuring that users from various backgrounds and with different devices can access the app smoothly is crucial for widespread usability.
+
 # User stories
 
 - As a user I want to be able to answer multiple choice question.
@@ -71,5 +81,19 @@ We also wanted more than just GitHub as a method of signing in so we implemented
 ## Day 6
 
 As this was the final day much of the time was spent as a group fine-tuning the project. We went through the code together to correct spelling mistakes. We also tried all different sizes of screens to make sure the layout was okay in all reasonable sizes. We spent time changing the header component into a client component so that we could conditionally render a different header based on screen size. As screen space is at a premium on mobile, we implemented a pop-out menu rather than a header permanently along the top of the screen. We changed the application settings in all our authentication routes to work on our deployed site rather than a local development environment. We then gave our deployment the necessary environment variables to deal with authentication.
+
+# References
+
+https://opentdb.com/ - source for our non-user-generated questions.
+
+AG Grid - used for producing data tables.
+
+Supabase – used as a database provider.
+
+AuthJS – used for authentication.
+
+Framer Motion – animation library used to animate our project.
+
+Images - Josh Day.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
