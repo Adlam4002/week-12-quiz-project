@@ -86,7 +86,7 @@ As this was the final day much of the time was spent as a group fine-tuning the 
 
 https://opentdb.com/ - source for our non-user-generated questions.
 
-AG Grid was used for producing data tables.
+AG Grid - used for producing data tables.
 
 Supabase – used as a database provider.
 
@@ -94,6 +94,6 @@ AuthJS – used for authentication.
 
 Framer Motion – animation library used to animate our project.
 
-Images by Josh Day.
+Images - Josh Day.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
