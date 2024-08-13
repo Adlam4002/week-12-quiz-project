@@ -5,6 +5,10 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { AuroraHero } from "@/components/Framer/AuroraHero";
 import { SessionProvider } from "next-auth/react";
+
+// Override default cache strategy
+export const fetchCache = "default-no-store"; // Allow any cache option to be passed to fetch but if no option is provided then set the cache option to 'no-store'. This means that even fetch requests before dynamic functions are considered dynamic.
+
 const exo2 = Exo_2({ subsets: ["latin"], weights: [500, 800] });
 
 export const metadata = {
