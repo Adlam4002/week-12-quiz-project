@@ -13,9 +13,8 @@ export default async function QuestionsListIdPage({ params }) {
     data.answer_3,
     data.answer_4,
   ];
-  console.log(data);
   return (
-    <main className="flex flex-col items-center w-3/12 mx-auto p-6 bg-white rounded-lg shadow-lg space-y-4 m-4">
+    <main className="w-80 mx-auto p-6 bg-white rounded-lg shadow-lg space-y-4 m-4">
       <div
         /*id="question-display"*/ className="text-center text-lg font-semibold text-white bg-blue-700 rounded-lg py-2 px-4 shadow-md min-w-full"
       >
