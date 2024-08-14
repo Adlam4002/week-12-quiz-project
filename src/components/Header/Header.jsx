@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logout } from "@/components/Logout";
 import { SignInButton } from "@/components/SignIn";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BarLoader } from "react-spinners";
 
 export default function Header() {
@@ -14,11 +14,28 @@ export default function Header() {
 
   const toggleDropdown = () => setDropdownOpen(!isDropdownOpen); //flips isDropdownOpen state between true and false to open and close the menu
 
+  let menuRef = useRef();
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) setDropdownOpen(false);
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+
   // Fix for the glitching Header on page load
   if (status === "loading") {
     // While the session is being fetched, show this
     return (
-      <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md">
+      <header
+        className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md"
+        ref={menuRef}
+      >
         <div>
           <Link href="/">
             <Image
@@ -36,7 +53,10 @@ export default function Header() {
 
   if (!session) {
     return (
-      <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md">
+      <header
+        className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md"
+        ref={menuRef}
+      >
         <div>
           <Link href="/">
             <Image
@@ -53,7 +73,10 @@ export default function Header() {
   }
 
   return (
-    <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md">
+    <header
+      className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md"
+      ref={menuRef}
+    >
       <div className="mb-2 md:mb-0">
         <Link href="/">
           <Image
