@@ -6,12 +6,33 @@ import Image from "next/image";
 import { Logout } from "@/components/Logout";
 import { SignInButton } from "@/components/SignIn";
 import { useState } from "react";
+import { BarLoader } from "react-spinners";
 
 export default function Header() {
   const { data: session, status } = useSession();
   const [isDropdownOpen, setDropdownOpen] = useState(false); //using to track visabillity of dropdown menu
 
   const toggleDropdown = () => setDropdownOpen(!isDropdownOpen); //flips isDropdownOpen state between true and false to open and close the menu
+
+  // Fix for the glitching Header on page load
+  if (status === "loading") {
+    // While the session is being fetched, show this
+    return (
+      <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md">
+        <div>
+          <Link href="/">
+            <Image
+              src="/Assets/QuizzieP.png"
+              alt="GitHub Logo"
+              width={200}
+              height={35}
+            />
+          </Link>
+        </div>
+        <BarLoader color="#1fcaca" loading width={500} />
+      </header>
+    );
+  }
 
   if (!session) {
     return (
@@ -46,7 +67,7 @@ export default function Header() {
       <div className="relative md:hidden">
         <div
           onClick={toggleDropdown}
-          className="px-3 py-2 rounded-lg bg-white bg-opacity-50 text-center"
+          className="px-3 py-2 rounded-lg bg-white bg-opacity-50 text-center cursor-pointer"
         >
           Menu
         </div>
@@ -55,30 +76,35 @@ export default function Header() {
             <Link
               href="/"
               className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+              onClick={toggleDropdown}
             >
               Home
             </Link>
             <Link
               href="/randomq"
               className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+              onClick={toggleDropdown}
             >
               Random Question
             </Link>
             <Link
               href="/newquestion"
               className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+              onClick={toggleDropdown}
             >
               Submit a Question
             </Link>
             <Link
               href="/questionslist"
               className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+              onClick={toggleDropdown}
             >
               View Questions
             </Link>
             <Link
               href={`/userprofile/${session.user.id}`}
               className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
+              onClick={toggleDropdown}
             >
               My Profile
             </Link>
