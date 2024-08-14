@@ -2,6 +2,12 @@ import React from "react";
 import QuizzComponent from "@/components/QuizzComponent";
 import { db } from "@/db";
 
+// Disable caching for this route
+export const fetchCache = "default-no-store";
+
+// Force the page to be treated as dynamic
+export const dynamic = "force-dynamic";
+
 export default async function RandomQPage() {
   const response = await db.query(
     `select question, correct_answer, answer_2, answer_3, answer_4  from quiz_questions ORDER BY RANDOM() FETCH FIRST 1 ROWS ONLY`
