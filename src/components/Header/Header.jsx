@@ -14,15 +14,21 @@ export default function Header() {
 
   const toggleDropdown = () => setDropdownOpen(!isDropdownOpen); //flips isDropdownOpen state between true and false to open and close the menu
 
+  // menuRef is used to track the bounds of the dropdown menu so we can close it when the user clicks outside of it
   let menuRef = useRef();
 
+  // This useEffect is used to close the dropdown menu when the user clicks outside of it
   useEffect(() => {
+    // Define the event handler
     let handler = (e) => {
+      // If the click is outside of the menu, close the dropdown
       if (!menuRef.current.contains(e.target)) setDropdownOpen(false);
     };
 
+    // Add the event listener when the component mounts
     document.addEventListener("mousedown", handler);
 
+    // Remove the event listener when the component unmounts
     return () => {
       document.removeEventListener("mousedown", handler);
     };
@@ -32,10 +38,7 @@ export default function Header() {
   if (status === "loading") {
     // While the session is being fetched, show this
     return (
-      <header
-        className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md"
-        ref={menuRef}
-      >
+      <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md">
         <div>
           <Link href="/">
             <Image
@@ -53,10 +56,7 @@ export default function Header() {
 
   if (!session) {
     return (
-      <header
-        className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md"
-        ref={menuRef}
-      >
+      <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md">
         <div>
           <Link href="/">
             <Image
@@ -73,10 +73,7 @@ export default function Header() {
   }
 
   return (
-    <header
-      className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md"
-      ref={menuRef}
-    >
+    <header className="w-full bg-white bg-opacity-30 backdrop-blur-md text-slate-800 flex flex-col md:flex-row justify-around items-center p-4 h-auto md:h-16 shadow-md">
       <div className="mb-2 md:mb-0">
         <Link href="/">
           <Image
@@ -95,7 +92,10 @@ export default function Header() {
           Menu
         </div>
         {isDropdownOpen && (
-          <nav className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-slate-300 bg-opacity-70 backdrop-blur-md p-4 rounded-lg shadow-lg flex flex-col items-center w-64 z-50">
+          <nav
+            className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-slate-300 bg-opacity-70 backdrop-blur-md p-4 rounded-lg shadow-lg flex flex-col items-center w-64 z-50"
+            ref={menuRef}
+          >
             <Link
               href="/"
               className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
