@@ -24,6 +24,9 @@ export default function UserGrid({ data }) {
     },
   ]);
 
+  // turn off row translation
+  const suppressRowTransform = true;
+
   const autoSizeStrategy = {
     type: "fitGridWidth",
   };
@@ -43,7 +46,12 @@ export default function UserGrid({ data }) {
         marginBottom: "20px",
       }}
     >
-      <AgGridReact rowData={rowData} columnDefs={colDefs} pagination={true} />
+      <AgGridReact
+        rowData={rowData}
+        suppressRowTransform={suppressRowTransform}
+        columnDefs={colDefs}
+        pagination={true}
+      />
     </div>
   );
 }
