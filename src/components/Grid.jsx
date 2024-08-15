@@ -27,9 +27,11 @@ export default function Grid({ data }) {
     },
   ]);
 
-  const defaultColDef = {
+  const defaultColDef = {};
 
-  };
+  // turn off row translation
+  const suppressRowTransform = true;
+
   const paginationPageSize = 25;
 
   const autoSizeStrategy = {
@@ -53,6 +55,7 @@ export default function Grid({ data }) {
     >
       <AgGridReact
         rowData={rowData}
+        suppressRowTransform={suppressRowTransform}
         columnDefs={colDefs}
         defaultColDef={defaultColDef}
         pagination={true}
