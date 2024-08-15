@@ -92,7 +92,7 @@ export default function Header() {
           Menu
         </div>
         {isDropdownOpen && (
-          <nav className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-slate-300 bg-opacity-70 backdrop-blur-md p-4 rounded-lg shadow-lg flex flex-col items-center w-64 z-50 overflow-visible">
+          <nav className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-slate-300 bg-opacity-70 backdrop-blur-md p-4 rounded-lg shadow-lg flex flex-col items-center w-64">
             <Link
               href="/"
               className="px-3 py-2 w-full text-center rounded-lg hover:bg-slate-100"
