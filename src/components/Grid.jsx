@@ -51,6 +51,7 @@ export default function Grid({ data }) {
         height: "83vh",
         marginTop: "20px",
         marginBottom: "20px",
+        overflow: "visible",
       }}
     >
       <AgGridReact

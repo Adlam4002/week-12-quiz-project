@@ -44,6 +44,7 @@ export default function UserGrid({ data }) {
         height: "85vh",
         marginTop: "20px",
         marginBottom: "20px",
+        overflow: "visible",
       }}
     >
       <AgGridReact
